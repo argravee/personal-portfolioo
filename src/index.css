@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Varela+Round&family=Gaegu:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-terracotta: #E2725B;
+  --color-sea-foam: #A2D1B1;
+  --color-coastal-blue: #7FB5B5;
+  --color-shell-white: #FFF9F0;
+  --color-sand: #F4E0C0;
+  --color-on-surface: #4A3728;
+  --color-surface: #FDF5E6;
+
+  --font-body: "Quicksand", sans-serif;
+  --font-heading: "Varela Round", sans-serif;
+  --font-hand: "Gaegu", cursive;
+
+  --spacing-section-gap: 120px;
+}
+
+@utility organic-border {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: 2px solid var(--color-terracotta);
+}
+
+@utility sketch-mask {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+@utility wavy-underline {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--color-sea-foam);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+body {
+  background-color: var(--color-surface);
+  background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+  color: var(--color-on-surface);
+  cursor: default;
+}
+
+.overlap-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.overlap-card:hover {
+  z-index: 10;
+  transform: scale(1.02) translateY(-5px);
+}
