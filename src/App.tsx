@@ -353,7 +353,7 @@ export default function App() {
                 title: 'Encrypted Inference Gateway',
                 category: '02. Machine Learning Infrastructure',
                 image: encryptedInferenceImage,
-                description: 'A highly scalable layer-7 load balancer implemented in Rust. Features dynamic algorithmic routing, health checking via custom probes, and seamless integration with Kubernetes ingress controllers. Built to handle tidal waves of incoming requests with minimal latency.',
+                description: 'A privacy-preserving inference gateway and reference implementation that supports both plaintext inference and CKKS-based encrypted inference. Clients discover models, build compatible CKKS sessions locally, encrypt inputs client-side, submit ciphertexts for evaluation, and decrypt results locally, while the server validates protocol compatibility and never receives plaintext inputs or secret keys.',
                 github: true,
                 githubUrl: 'https://github.com/argravee/privacy-preserving-inference-gateway'
               })}
@@ -416,7 +416,7 @@ export default function App() {
                 title: 'Civic Voice',
                 category: '04. Full-Stack Mobile Application',
                 image: civicVoiceImage,
-                description: 'A lightweight, high-throughput mobile application designed for community engagement and civic voice amplification leveraging modern framework stacks.',
+                description: 'Civic Voice is a mobile-first platform that transforms fragmented Canadian political data into a unified, personalized civic dashboard. It allows users to identify their federal and provincial representatives, track relevant bills and policy activity, and stay informed about decisions that directly impact them without needing to navigate complex government websites.\n\nRather than changing user behavior, Civic Voice builds on an existing pattern: when people see political issues online, they often seek out representatives or institutions to respond. This platform formalizes and improves that flow by providing a direct, structured pathway from awareness to informed civic action.',
                 github: true
               })}
             >
