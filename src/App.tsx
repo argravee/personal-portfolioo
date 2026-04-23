@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   ArrowDown,
   ArrowUpRight,
@@ -36,6 +36,17 @@ const staggerContainer = {
 export default function App() {
   const [selectedProject, setSelectedProject] = useState<{ id: string, title: string, category: string, image: string, description: string, github?: boolean, githubUrl?: string } | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    const syncViewport = () => setIsMobileViewport(mediaQuery.matches);
+
+    syncViewport();
+    mediaQuery.addEventListener('change', syncViewport);
+
+    return () => mediaQuery.removeEventListener('change', syncViewport);
+  }, []);
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -45,8 +56,8 @@ export default function App() {
   });
 
   const { scrollY } = useScroll();
-  const heroY = useTransform(scrollY, [0, 500], [0, 150]);
-  const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const heroY = useTransform(scrollY, isMobileViewport ? [0, 700] : [0, 500], isMobileViewport ? [0, 80] : [0, 150]);
+  const heroOpacity = useTransform(scrollY, isMobileViewport ? [0, 700] : [0, 300], isMobileViewport ? [1, 0.72] : [1, 0]);
 
   return (
     <div className="selection:bg-sea-foam selection:text-on-surface scroll-smooth">
@@ -60,12 +71,12 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-shell-white/80 backdrop-blur-sm"
+            className="fixed inset-0 z-[200] flex items-start md:items-center justify-center p-4 overflow-y-auto bg-shell-white/80 backdrop-blur-sm"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
               layoutId={`project-${selectedProject.id}`}
-              className="bg-white organic-border p-8 max-w-2xl w-full shadow-2xl relative"
+              className="bg-white organic-border p-6 md:p-8 max-w-2xl w-full max-h-[calc(100vh-2rem)] overflow-y-auto shadow-2xl relative my-4 md:my-0"
               onClick={(e) => e.stopPropagation()}
             >
               <button 
