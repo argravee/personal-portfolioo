@@ -14,6 +14,7 @@ import {
   X,
 } from 'lucide-react';
 import { motion, useScroll, useSpring, useTransform, AnimatePresence } from 'motion/react';
+import encryptedInferenceImage from '../assets/encryp.png';
 import mountainImage from '../assets/mountain.jpg';
 import sasWebsiteImage from '../assets/sas-wesbite.png';
 
@@ -350,7 +351,7 @@ export default function App() {
                 id: '2',
                 title: 'Encrypted Inference Gateway',
                 category: '02. Machine Learning Infrastructure',
-                image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000',
+                image: encryptedInferenceImage,
                 description: 'A highly scalable layer-7 load balancer implemented in Rust. Features dynamic algorithmic routing, health checking via custom probes, and seamless integration with Kubernetes ingress controllers. Built to handle tidal waves of incoming requests with minimal latency.',
                 github: true,
                 githubUrl: 'https://github.com/argravee/privacy-preserving-inference-gateway'
@@ -358,9 +359,9 @@ export default function App() {
             >
               <div className="aspect-[3/4] overflow-hidden organic-border bg-white shadow-xl rotate-[2deg]">
                 <img
-                  alt="Cyber network infrastructure"
+                  alt="Encrypted Inference Gateway repository structure"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000"
+                  src={encryptedInferenceImage}
                 />
               </div>
               <div className="mt-6 text-right pr-4 transition-transform group-hover:-translate-x-2">
@@ -381,22 +382,22 @@ export default function App() {
               onClick={() => setSelectedProject({
                 id: '3',
                 title: 'Sunny and Safe Saskatchewan',
-                category: '04. Full-stack Website',
-                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000',
+                category: '03. Full-stack Website',
+                image: sasWebsiteImage,
                 description: 'A comprehensive full-stack website designed to track and display localized weather, safety advisories, and resources for Saskatchewan residents.',
                 github: true
               })}
             >
               <div className="aspect-square overflow-hidden organic-border bg-white shadow-xl rotate-[3deg]">
                 <img
-                  alt="Mobile application analytics"
+                  alt="Sunny and Safe Saskatchewan website preview"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000"
+                  src={sasWebsiteImage}
                 />
               </div>
               <div className="mt-6 pl-4 transition-transform group-hover:translate-x-2">
                 <span className="font-hand text-xl text-coastal-blue">
-                  04. Full-stack Website
+                  03. Full-stack Website
                 </span>
                 <h3 className="font-heading text-2xl mt-1 text-on-surface flex items-center gap-2">
                   Sunny and Safe Saskatchewan
@@ -412,22 +413,22 @@ export default function App() {
               onClick={() => setSelectedProject({
                 id: '4',
                 title: 'Civic Voice',
-                category: '03. Full-Stack Mobile Application',
-                image: sasWebsiteImage,
+                category: '04. Full-Stack Mobile Application',
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000',
                 description: 'A lightweight, high-throughput mobile application designed for community engagement and civic voice amplification leveraging modern framework stacks.',
                 github: true
               })}
             >
               <div className="aspect-[16/9] overflow-hidden organic-border bg-white shadow-xl rotate-[-2deg]">
                 <img
-                  alt="Mountains and sun"
+                  alt="Mobile application analytics"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                  src={sasWebsiteImage}
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000"
                 />
               </div>
               <div className="mt-6 md:text-right pr-4 transition-transform group-hover:-translate-x-2">
                 <span className="font-hand text-xl text-terracotta">
-                  03. Full-Stack Mobile Application
+                  04. Full-Stack Mobile Application
                 </span>
                 <h3 className="font-heading text-2xl mt-1 text-on-surface flex md:justify-end items-center gap-2">
                   <ArrowUpRight className="w-5 h-5 text-terracotta" />
