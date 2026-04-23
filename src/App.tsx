@@ -14,6 +14,8 @@ import {
   X,
 } from 'lucide-react';
 import { motion, useScroll, useSpring, useTransform, AnimatePresence } from 'motion/react';
+import mountainImage from '../assets/mountain.jpg';
+import sasWebsiteImage from '../assets/sas-wesbite.png';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -30,7 +32,7 @@ const staggerContainer = {
 };
 
 export default function App() {
-  const [selectedProject, setSelectedProject] = useState<{ id: string, title: string, category: string, image: string, description: string, github?: boolean } | null>(null);
+  const [selectedProject, setSelectedProject] = useState<{ id: string, title: string, category: string, image: string, description: string, github?: boolean, githubUrl?: string } | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const { scrollYProgress } = useScroll();
@@ -76,9 +78,9 @@ export default function App() {
               <span className="font-hand text-xl text-terracotta">{selectedProject.category}</span>
               <h3 className="font-heading text-4xl mt-2 text-on-surface mb-4">
                 {selectedProject.title}
-                {selectedProject.github && (
+                {selectedProject.github && selectedProject.githubUrl && (
                   <span className="inline-flex items-center align-middle ml-4 relative -top-1">
-                    <a href="#" onClick={(e) => e.stopPropagation()} className="hover:text-terracotta text-on-surface transition-colors" title="View GitHub Repo">
+                    <a href={selectedProject.githubUrl} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()} className="hover:text-terracotta text-on-surface transition-colors" title="View GitHub Repo">
                       <Github className="w-8 h-8" />
                     </a>
                     <ArrowUpRight className="w-5 h-5 ml-1 text-on-surface/60" />
@@ -261,7 +263,7 @@ export default function App() {
                 <img
                   alt="Atmospheric seaside landscape"
                   className="absolute inset-0 w-full h-full object-cover sketch-mask border-8 border-shell-white shadow-2xl transition-all duration-700 group-hover:scale-105 group-hover:rotate-2"
-                  src="/assets/mountain.jpg"
+                  src={mountainImage}
                 />
               </div>
             </motion.div>
@@ -350,7 +352,8 @@ export default function App() {
                 category: '02. Machine Learning Infrastructure',
                 image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000',
                 description: 'A highly scalable layer-7 load balancer implemented in Rust. Features dynamic algorithmic routing, health checking via custom probes, and seamless integration with Kubernetes ingress controllers. Built to handle tidal waves of incoming requests with minimal latency.',
-                github: true
+                github: true,
+                githubUrl: 'https://github.com/argravee/privacy-preserving-inference-gateway'
               })}
             >
               <div className="aspect-[3/4] overflow-hidden organic-border bg-white shadow-xl rotate-[2deg]">
@@ -377,10 +380,10 @@ export default function App() {
               className="md:col-span-5 mt-[-20px] md:mt-[-100px] overlap-card cursor-pointer group"
               onClick={() => setSelectedProject({
                 id: '3',
-                title: 'Civic Voice',
-                category: '03. Full-Stack Mobile Application',
+                title: 'Sunny and Safe Saskatchewan',
+                category: '04. Full-stack Website',
                 image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000',
-                description: 'A lightweight, high-throughput mobile application designed for community engagement and civic voice amplification leveraging modern framework stacks.',
+                description: 'A comprehensive full-stack website designed to track and display localized weather, safety advisories, and resources for Saskatchewan residents.',
                 github: true
               })}
             >
@@ -393,10 +396,10 @@ export default function App() {
               </div>
               <div className="mt-6 pl-4 transition-transform group-hover:translate-x-2">
                 <span className="font-hand text-xl text-coastal-blue">
-                  03. Full-Stack Mobile Application
+                  04. Full-stack Website
                 </span>
                 <h3 className="font-heading text-2xl mt-1 text-on-surface flex items-center gap-2">
-                  Civic Voice
+                  Sunny and Safe Saskatchewan
                   <ArrowUpRight className="w-5 h-5 text-coastal-blue" />
                 </h3>
               </div>
@@ -408,10 +411,10 @@ export default function App() {
               className="md:col-span-7 md:col-start-6 overlap-card cursor-pointer group"
               onClick={() => setSelectedProject({
                 id: '4',
-                title: 'Sunny and Safe Saskatchewan',
-                category: '04. Full-stack Website',
-                image: '/assets/sas-wesbite.png',
-                description: 'A comprehensive full-stack website designed to track and display localized weather, safety advisories, and resources for Saskatchewan residents.',
+                title: 'Civic Voice',
+                category: '03. Full-Stack Mobile Application',
+                image: sasWebsiteImage,
+                description: 'A lightweight, high-throughput mobile application designed for community engagement and civic voice amplification leveraging modern framework stacks.',
                 github: true
               })}
             >
@@ -419,16 +422,16 @@ export default function App() {
                 <img
                   alt="Mountains and sun"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                  src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&q=80&w=1000"
+                  src={sasWebsiteImage}
                 />
               </div>
               <div className="mt-6 md:text-right pr-4 transition-transform group-hover:-translate-x-2">
                 <span className="font-hand text-xl text-terracotta">
-                  04. Full-stack Website
+                  03. Full-Stack Mobile Application
                 </span>
                 <h3 className="font-heading text-2xl mt-1 text-on-surface flex md:justify-end items-center gap-2">
                   <ArrowUpRight className="w-5 h-5 text-terracotta" />
-                  Sunny and Safe Saskatchewan
+                  Civic Voice
                 </h3>
               </div>
             </motion.div>
