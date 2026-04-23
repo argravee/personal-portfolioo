@@ -236,7 +236,7 @@ export default function App() {
               <p className="font-body text-2xl md:text-3xl text-on-surface/90 max-w-2xl leading-relaxed mb-8">
                 CS & Philosophy student at{' '}
                 <span className="wavy-underline">USask</span> building ML and
-                backend systems for real-world constraints.
+                backend systems for real-world problems.
               </p>
               <div className="flex gap-4">
                 <motion.div
@@ -261,7 +261,7 @@ export default function App() {
                 <img
                   alt="Atmospheric seaside landscape"
                   className="absolute inset-0 w-full h-full object-cover sketch-mask border-8 border-shell-white shadow-2xl transition-all duration-700 group-hover:scale-105 group-hover:rotate-2"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC10b7-jy0lAK_KSRxAnGxo7mI_8rAZ-YRO_LZHcklHhNhsZb1xLw5m5xWnSYXE0IQPED5g9jTc1D_xV1zFpqQcWFYKU1JFIPAChfFY1NQf-1NV7GAPRw9WUFLHieSqhFCXJCyb12R4C35N-FZRaqP_-HVN2MAQC5jgMB9h7q2MlgtoxYC162yd19sLo6VWuqSCQ9ZiEVJrdodQusfB74rLGsvVGWPD_xrm-Pnp5VEv5A72vUZo4pwBgrze440DrZ5oU_22HzEn"
+                  src="/assets/mountain.jpg"
                 />
               </div>
             </motion.div>
@@ -410,7 +410,7 @@ export default function App() {
                 id: '4',
                 title: 'Sunny and Safe Saskatchewan',
                 category: '04. Full-stack Website',
-                image: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&q=80&w=1000',
+                image: '/assets/sas-wesbite.png',
                 description: 'A comprehensive full-stack website designed to track and display localized weather, safety advisories, and resources for Saskatchewan residents.',
                 github: true
               })}
