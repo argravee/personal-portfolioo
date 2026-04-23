@@ -14,6 +14,7 @@ import {
   X,
 } from 'lucide-react';
 import { motion, useScroll, useSpring, useTransform, AnimatePresence } from 'motion/react';
+import civicVoiceImage from '../assets/cv-image.png';
 import encryptedInferenceImage from '../assets/encryp.png';
 import mountainImage from '../assets/mountain.jpg';
 import sasWebsiteImage from '../assets/sas-wesbite.png';
@@ -414,16 +415,16 @@ export default function App() {
                 id: '4',
                 title: 'Civic Voice',
                 category: '04. Full-Stack Mobile Application',
-                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000',
+                image: civicVoiceImage,
                 description: 'A lightweight, high-throughput mobile application designed for community engagement and civic voice amplification leveraging modern framework stacks.',
                 github: true
               })}
             >
               <div className="aspect-[16/9] overflow-hidden organic-border bg-white shadow-xl rotate-[-2deg]">
                 <img
-                  alt="Mobile application analytics"
+                  alt="Civic Voice mobile app screens"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000"
+                  src={civicVoiceImage}
                 />
               </div>
               <div className="mt-6 md:text-right pr-4 transition-transform group-hover:-translate-x-2">
