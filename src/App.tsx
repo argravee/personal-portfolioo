@@ -332,16 +332,16 @@ export default function App() {
                 id: '1',
                 title: 'Continually Updating EI Guidance Model',
                 category: '01. Continual Learning / Model Training',
-                image: 'https://images.unsplash.com/photo-1531289136127-ea1d7b613ce2?auto=format&fit=crop&q=80&w=1000',
+                image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=1000',
                 description: 'A continual-learning language model for Employment Insurance guidance, designed to adapt to changing policy snapshots, retain historical knowledge, and answer date-specific claimant scenarios without requiring complete retraining.',
                 github: true
               })}
             >
               <div className="aspect-[4/3] overflow-hidden organic-border bg-white shadow-xl rotate-[-1deg]">
                 <img
-                  alt="Tech infrastructure"
+                  alt="Model training and engineering workspace"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                  src="https://images.unsplash.com/photo-1531289136127-ea1d7b613ce2?auto=format&fit=crop&q=80&w=1000"
+                  src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=1000"
                 />
               </div>
               <div className="mt-6 pl-4 transition-transform group-hover:translate-x-2">
@@ -364,7 +364,7 @@ export default function App() {
                 title: 'Encrypted Inference Gateway',
                 category: '02. Machine Learning Infrastructure',
                 image: encryptedInferenceImage,
-                description: 'A privacy-preserving inference gateway and reference implementation that supports both plaintext inference and CKKS-based encrypted inference. Clients discover models, build compatible CKKS sessions locally, encrypt inputs client-side, submit ciphertexts for evaluation, and decrypt results locally, while the server validates protocol compatibility and never receives plaintext inputs or secret keys.',
+                description: 'A privacy-preserving machine learning inference gateway that supports both a plaintext baseline and a CKKS-based encrypted inference path. Clients discover supported models, build encryption sessions locally, encrypt inputs before submission, and decrypt results on their own side, while the server validates requests and evaluates only ciphertexts without ever receiving plaintext inputs or secret keys.',
                 github: true,
                 githubUrl: 'https://github.com/argravee/privacy-preserving-inference-gateway'
               })}
@@ -396,7 +396,7 @@ export default function App() {
                 title: 'Sunny and Safe Saskatchewan',
                 category: '03. Full-stack Website',
                 image: sasWebsiteImage,
-                description: 'A comprehensive full-stack website designed to track and display localized weather, safety advisories, and resources for Saskatchewan residents.',
+                description: 'A community-focused sun safety website built for Sunny and Safe Saskatchewan to support public education, campaign storytelling, and grassroots outreach. The site highlights the organization\'s mission, initiatives, educational content, impact metrics, team, and contact pathways, and also includes an SPF calculator that helps visitors turn sun safety awareness into practical action.',
                 github: true
               })}
             >
@@ -458,7 +458,7 @@ export default function App() {
             transition={{ duration: 1 }}
             className="absolute -left-10 md:-left-10 top-20 text-terracotta/5 select-none font-heading text-7xl md:text-9xl pointer-events-none"
           >
-            DATA
+            SKILLS
           </motion.div>
           <motion.div
             initial={{ x: 100, opacity: 0 }}
