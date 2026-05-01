@@ -17,7 +17,7 @@ import { motion, useScroll, useSpring, useTransform, AnimatePresence } from 'mot
 import civicVoiceImage from '../assets/cv-image.png';
 import encryptedInferenceImage from '../assets/encryp.png';
 import mountainImage from '../assets/mountain.jpg';
-import sasWebsiteImage from '../assets/sas-wesbite.png';
+import sunnyAndSafeSaskatchewanImage from '../assets/sunny-and-safe-saskatchewan.png';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -34,7 +34,7 @@ const staggerContainer = {
 };
 
 export default function App() {
-  const [selectedProject, setSelectedProject] = useState<{ id: string, title: string, category: string, image: string, description: string, github?: boolean, githubUrl?: string } | null>(null);
+  const [selectedProject, setSelectedProject] = useState<{ id: string, title: string, category: string, image: string, description: string, github?: boolean, githubUrl?: string, liveUrl?: string } | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileViewport, setIsMobileViewport] = useState(false);
 
@@ -99,6 +99,18 @@ export default function App() {
               <span className="font-hand text-xl text-terracotta">{selectedProject.category}</span>
               <h3 className="font-heading text-4xl mt-2 text-on-surface mb-4">
                 {selectedProject.title}
+                {selectedProject.liveUrl && (
+                  <a
+                    href={selectedProject.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center align-middle ml-4 relative -top-1 hover:text-terracotta text-on-surface transition-colors"
+                    title="Visit website"
+                  >
+                    <ArrowUpRight className="w-7 h-7" />
+                  </a>
+                )}
                 {selectedProject.github && selectedProject.githubUrl && (
                   <span className="inline-flex items-center align-middle ml-4 relative -top-1">
                     <a href={selectedProject.githubUrl} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()} className="hover:text-terracotta text-on-surface transition-colors" title="View GitHub Repo">
@@ -403,16 +415,16 @@ export default function App() {
                 id: '3',
                 title: 'Sunny and Safe Saskatchewan',
                 category: '03. Full-stack Website',
-                image: sasWebsiteImage,
+                image: sunnyAndSafeSaskatchewanImage,
                 description: 'A community-focused sun safety website built for Sunny and Safe Saskatchewan to support public education, campaign storytelling, and grassroots outreach. The site highlights the organization\'s mission, initiatives, educational content, impact metrics, team, and contact pathways, and also includes an SPF calculator that helps visitors turn sun safety awareness into practical action.',
-                github: true
+                liveUrl: 'https://sunnyandsafe.ca/'
               })}
             >
-              <div className="aspect-square overflow-hidden organic-border bg-white shadow-xl rotate-[3deg]">
+              <div className="aspect-[16/9] overflow-hidden organic-border bg-white shadow-xl rotate-[3deg]">
                 <img
                   alt="Sunny and Safe Saskatchewan website preview"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                  src={sasWebsiteImage}
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-1000"
+                  src={sunnyAndSafeSaskatchewanImage}
                 />
               </div>
               <div className="mt-6 pl-4 transition-transform group-hover:translate-x-2">
@@ -421,7 +433,16 @@ export default function App() {
                 </span>
                 <h3 className="font-heading text-2xl mt-1 text-on-surface flex items-center gap-2">
                   Sunny and Safe Saskatchewan
-                  <ArrowUpRight className="w-5 h-5 text-coastal-blue" />
+                  <a
+                    href="https://sunnyandsafe.ca/"
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center text-coastal-blue hover:text-terracotta transition-colors"
+                    title="Visit website"
+                  >
+                    <ArrowUpRight className="w-5 h-5" />
+                  </a>
                 </h3>
               </div>
             </motion.div>
@@ -464,7 +485,7 @@ export default function App() {
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            className="absolute -left-10 md:-left-10 top-20 text-terracotta/5 select-none font-heading text-7xl md:text-9xl pointer-events-none"
+            className="absolute left-4 md:-left-10 top-20 text-terracotta/5 select-none font-heading text-7xl md:text-9xl pointer-events-none"
           >
             SKILLS
           </motion.div>
@@ -472,7 +493,7 @@ export default function App() {
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            className="absolute -right-4 md:-right-10 bottom-20 text-sea-foam/5 select-none font-heading text-7xl md:text-9xl pointer-events-none"
+            className="absolute right-4 md:-right-10 bottom-20 text-sea-foam/5 select-none font-heading text-7xl md:text-9xl pointer-events-none"
           >
             SKILLS
           </motion.div>
