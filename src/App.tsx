@@ -56,8 +56,16 @@ export default function App() {
   });
 
   const { scrollY } = useScroll();
-  const heroY = useTransform(scrollY, isMobileViewport ? [0, 700] : [0, 500], isMobileViewport ? [0, 80] : [0, 150]);
-  const heroOpacity = useTransform(scrollY, isMobileViewport ? [0, 700] : [0, 300], isMobileViewport ? [1, 0.72] : [1, 0]);
+  const heroY = useTransform(
+    scrollY,
+    isMobileViewport ? [0, 700] : [0, 300, 850],
+    isMobileViewport ? [0, 80] : [0, 0, 120],
+  );
+  const heroOpacity = useTransform(
+    scrollY,
+    isMobileViewport ? [0, 700] : [0, 300, 850],
+    isMobileViewport ? [1, 0.72] : [1, 1, 0.12],
+  );
 
   return (
     <div className="selection:bg-sea-foam selection:text-on-surface scroll-smooth">
