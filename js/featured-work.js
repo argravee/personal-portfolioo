@@ -31,13 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const initAnimations = () => {
     if (window.innerWidth <= 1000) {
       if (scrollTriggerInstance) {
-        scrollTriggerInstance.kill();
+        scrollTriggerInstance.kill(true);
         scrollTriggerInstance = null;
       }
+      gsap.set([heroTitle, imgContainer, cards], { clearProps: "all" });
+      gsap.set(cards, { display: "block", opacity: 1, x: 0 });
+      ScrollTrigger.refresh();
       return;
     }
 
-    if (scrollTriggerInstance) scrollTriggerInstance.kill();
+    if (scrollTriggerInstance) scrollTriggerInstance.kill(true);
 
     // Create section indicators
     const indicatorContainer = document.querySelector(".featured-work-indicator");

@@ -20,15 +20,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Disable animations on small screens (width <= 1000px)
     if (window.innerWidth <= 1000) {
       scrollTriggerInstances.forEach((instance) => {
-        if (instance) instance.kill(); // Clean up existing instances
+        if (instance) instance.kill(true); // Clean up existing instances
       });
       scrollTriggerInstances = []; // Reset array
+      gsap.set(".service-card", { clearProps: "all" });
+      gsap.set(".service-card-inner", { clearProps: "all" });
+      ScrollTrigger.refresh();
       return;
     }
 
     // Clean up existing ScrollTrigger instances
     scrollTriggerInstances.forEach((instance) => {
-      if (instance) instance.kill();
+      if (instance) instance.kill(true);
     });
     scrollTriggerInstances = [];
 
