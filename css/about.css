@@ -26,25 +26,34 @@
   width: 50%;
 }
 
-.about-hero .about-hero-portrait {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(10deg);
-  width: 15%;
-  aspect-ratio: 5/7;
-  border-radius: 1em;
-  overflow: hidden;
-  border: 3px solid var(--fg);
-  outline: 3px solid var(--accent1);
-  outline-offset: 4px;
-  box-shadow: 8px 8px 0px var(--fg);
-}
-
 .about-hero .about-hero-bio {
   display: flex;
   flex-direction: column;
   gap: 2em;
+}
+
+.about-hero .about-hero-bio .ss {
+  font-family: "formula-narrow", "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.28;
+  letter-spacing: 0.01em;
+}
+
+.about-hero .about-hero-bio .mn {
+  font-family: "supply-mono", "Courier New", monospace;
+}
+
+.about-hero.about-hero-compact {
+  height: auto;
+  min-height: 0;
+  padding: 4.5em 2em 5.5em;
+  justify-content: center;
+  gap: 2.5em;
+}
+
+.about-hero.about-hero-compact .about-hero-bio {
+  width: min(72rem, 82vw);
 }
 
 /* about - about copy */
@@ -204,15 +213,8 @@
     width: 100%;
   }
 
-  .about-hero .about-hero-portrait {
-    width: 25%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-
-  .about-hero .about-hero-portrait img {
-    position: absolute;
-    height: 110%;
+  .about-hero.about-hero-compact {
+    padding: 4em 1.25em;
   }
 
   .about-copy .about-copy-content {

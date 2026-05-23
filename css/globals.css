@@ -78,84 +78,72 @@
   .contact-cta {
     position: relative;
     width: 100vw;
-    height: 100svh;
-    padding: 2em;
+    min-height: 70svh;
+    padding: 7em 2em;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
-  .contact-cta .contact-button {
+
+  .contact-cta .contact-card {
     position: relative;
-    width: 60%;
-    height: 300px;
-    border: 3px solid var(--fg);
-    border-radius: 20em;
-    background: linear-gradient(
-      135deg,
-      var(--bg2),
-      var(--accent2),
-      var(--accent3),
-      var(--bg2)
-    );
-    background-size: 400% 400%;
+    width: min(980px, 88vw);
+    padding: clamp(2rem, 5vw, 4rem) 0;
+    border-top: 2px solid rgba(26, 43, 32, 0.22);
+    border-bottom: 2px solid rgba(26, 43, 32, 0.22);
+    display: grid;
+    grid-template-columns: minmax(0, 0.75fr) minmax(320px, 1fr);
+    gap: clamp(2em, 6vw, 5em);
+    align-items: end;
+  }
+
+  .contact-cta .contact-card-eyebrow {
+    grid-column: 1 / -1;
+    width: max-content;
+    padding-bottom: 0.75em;
+    color: rgba(26, 43, 32, 0.68);
+  }
+
+  .contact-cta .contact-card h1 {
+    font-size: clamp(4rem, 9vw, 7rem);
+  }
+
+  .contact-cta .contact-card-links {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    animation: gradientMove 15s ease-in-out infinite;
-    box-shadow: 6px 6px 0px var(--fg);
-    overflow: hidden;
-    cursor: pointer;
+    border-top: 1px solid rgba(26, 43, 32, 0.2);
   }
-  
-  .contact-cta .contact-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 12px 12px 0px var(--accent1);
-    border-color: var(--accent1);
+
+  .contact-cta .contact-card-links a {
+    display: flex;
+    min-width: 0;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1em;
+    padding: 1.1em 0;
+    border-bottom: 1px solid rgba(26, 43, 32, 0.2);
+    transition: color 0.2s ease, padding-left 0.2s ease;
   }
-  
-  .contact-cta a {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+
+  .contact-cta .contact-card-links a:hover {
+    color: var(--accent1);
+    padding-left: 0.35em;
   }
-  
-  .contact-cta .contact-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background: repeating-linear-gradient(
-      45deg,
-      rgba(0, 0, 0, 0.125) 0px,
-      rgba(0, 0, 0, 0.125) 15px,
-      transparent 15px,
-      transparent 30px
-    );
-    animation: stripeMove 30s linear infinite;
+
+  .contact-cta .contact-card-links span {
+    text-transform: uppercase;
+    font-family: "supply-mono", monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    opacity: 0.72;
   }
-  
-  .contact-cta .contact-text-small {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .contact-cta .contact-text-large {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .contact-cta .contact-text-large h1 {
-    font-size: 7rem;
+
+  .contact-cta .contact-card-links strong {
+    overflow-wrap: anywhere;
+    font-family: "formula-narrow", "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1.5rem, 2.8vw, 2.15rem);
+    line-height: 1;
   }
   
   @keyframes gradientMove {
@@ -185,23 +173,17 @@
     }
   
     .contact-cta {
-      height: max-content;
-      padding: 8em 2em;
+      min-height: max-content;
+      padding: 6em 1.25em;
     }
-  
-    .contact-cta .contact-button {
-      width: 95%;
-      height: 250px;
-      gap: 1em;
-      border-radius: 2em;
+
+    .contact-cta .contact-card {
+      grid-template-columns: 1fr;
+      width: 100%;
     }
-  
-    .contact-cta .contact-text-small {
-      width: 75%;
-      text-align: center;
-    }
-  
-    .contact-cta .contact-text-large h1 {
-      font-size: 3rem;
+
+    .contact-cta .contact-card-links a {
+      align-items: flex-start;
+      flex-direction: column;
     }
   }

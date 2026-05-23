@@ -11,9 +11,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const openLabel = document.querySelector(".open-label"); // Open menu label
   const closeLabel = document.querySelector(".close-label"); // Close menu label
   const navItems = document.querySelectorAll(".nav-item"); // Navigation items
+  const hero = document.querySelector(".hero");
   let isMenuOpen = false; // Tracks menu state (open/closed)
   let isAnimating = false; // Prevents multiple animations at once
   let scrollY = 0; // Stores scroll position when menu opens
+
+  const updateHeroNavVisibility = () => {
+    if (!hero || isMenuOpen) return;
+
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    document.body.classList.toggle("hero-nav-hidden", heroBottom > 80);
+  };
+
+  updateHeroNavVisibility();
+  window.addEventListener("scroll", updateHeroNavVisibility, { passive: true });
+  window.addEventListener("resize", updateHeroNavVisibility);
 
   // Add click event listener to menu toggle button
   menuToggleBtn.addEventListener("click", () => {
@@ -31,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navOverlay.style.pointerEvents = "all";
       // Add "menu-open" class to toggle button for styling
       menuToggleBtn.classList.add("menu-open");
+      document.body.classList.remove("hero-nav-hidden");
       // Store current scroll position
       scrollY = window.scrollY;
       // Lock body scroll by fixing position
@@ -115,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       isMenuOpen = false; // Update menu state
+      updateHeroNavVisibility();
     }
   });
 });

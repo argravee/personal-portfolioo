@@ -32,7 +32,11 @@
         <nav>
           <div class="logo">
             <div class="logo-container">
-              <p class="mn"><a href="/">N ✦ S</a></p>
+              <a class="home-icon-link" href="/" aria-label="Home">
+                <svg class="home-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 10.75 12 4l8 6.75V20h-5v-6H9v6H4v-9.25Z" />
+                </svg>
+              </a>
             </div>
           </div>
           <div class="menu-toggle-btn">
@@ -44,6 +48,10 @@
         </nav>
   
         <div class="nav-overlay">
+          <div class="nav-overlay-kicker">
+            <p class="mn">Nasar Siddiqui</p>
+            <p class="mn">SWE & Philosophy // USASK</p>
+          </div>
           <div class="nav-items">
             <div class="nav-item active">
               <p><a href="/">Home</a></p>
@@ -68,8 +76,8 @@
                 <p class="mn">Find Me</p>
               </div>
               <div class="nav-footer-item-copy">
-                <p class="mn"><a href="https://github.com/ar1shns" target="_blank">Github</a></p>
-                <p class="mn"><a href="https://www.linkedin.com/in/muhammad-nasar-siddiqui/" target="_blank">LinkedIn</a></p>
+                <p class="mn"><a href="https://github.com/argravee" target="_blank">Github</a></p>
+                <p class="mn"><a href="https://www.linkedin.com/in/nasarsidd" target="_blank">LinkedIn</a></p>
               </div>
             </div>
             <div class="nav-footer-item">
@@ -91,9 +99,30 @@
             </div>
           </div>
         </div>
+        <div class="social-dock" aria-label="Social links">
+          <a href="https://github.com/argravee" target="_blank" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2.25A9.75 9.75 0 0 0 8.92 21.26c.49.09.67-.21.67-.47v-1.7c-2.72.59-3.3-1.16-3.3-1.16-.45-1.13-1.1-1.43-1.1-1.43-.89-.61.07-.6.07-.6.99.07 1.51 1.02 1.51 1.02.88 1.5 2.31 1.07 2.87.82.09-.64.34-1.07.62-1.32-2.17-.25-4.46-1.09-4.46-4.84 0-1.07.38-1.94 1.01-2.62-.1-.25-.44-1.24.1-2.59 0 0 .83-.26 2.69 1.01A9.28 9.28 0 0 1 12 7.05c.83 0 1.66.11 2.44.33 1.86-1.27 2.68-1.01 2.68-1.01.54 1.35.2 2.34.1 2.59.63.68 1.01 1.55 1.01 2.62 0 3.76-2.29 4.59-4.47 4.83.35.3.66.9.66 1.82v2.56c0 .26.18.57.68.47A9.75 9.75 0 0 0 12 2.25Z" />
+            </svg>
+          </a>
+          <a href="mailto:nasar.siddi@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.75 6.5h14.5A1.75 1.75 0 0 1 21 8.25v7.5a1.75 1.75 0 0 1-1.75 1.75H4.75A1.75 1.75 0 0 1 3 15.75v-7.5A1.75 1.75 0 0 1 4.75 6.5Zm.66 1.75 6.59 4.31 6.59-4.31H5.41Zm13.84 7.5V9.86l-6.78 4.43a.88.88 0 0 1-.94 0L4.75 9.86v5.89h14.5Z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/nasarsidd" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5.38 8.9h3.24V19H5.38V8.9Zm1.62-4.9a1.88 1.88 0 1 1 0 3.76 1.88 1.88 0 0 1 0-3.76Zm3.59 4.9h3.1v1.38h.04c.43-.82 1.49-1.68 3.07-1.68 3.28 0 3.89 2.16 3.89 4.97V19h-3.23v-4.81c0-1.15-.02-2.62-1.6-2.62-1.6 0-1.84 1.25-1.84 2.54V19h-3.23V8.9Z" />
+            </svg>
+          </a>
+        </div>
              
         <!-- home - hero -->
       <section class="hero">
+        <div class="availability-stamp" aria-label="Available for freelance work in May 2026">
+          <p class="mn">Available for freelance work</p>
+          <h2>MAY '26</h2>
+        </div>
         <div class="hero-header-wrapper">
           <div class="hero-header hero-header-1">
             <h1>Nasar</h1>
@@ -103,50 +132,78 @@
           </div>
         </div>
         <div class="hero-footer">
-          <div class="hero-footer-symbols">
-            <img src="/images/global/symbols.png" alt="" />
-          </div>
-          <div class="hero-footer-scroll-down">
-            <p class="mn"><a href="https://www.linkedin.com/in/muhammad-nasar-siddiqui/" target="_blank" class="resume-link"> Fetch // Profile</a></p>
-          </div>
           <div class="hero-footer-tags">
-            <p class="mn">SWE Student // USask</p>
+            <p class="mn">SWE & Philosophy // USASK</p>
           </div>
         </div>
       </section>
 
-<!-- about - about hero -->
-<section class="about-hero">
-    <div class="about-hero-header">
-      <h1>Hi, I'm</h1>
-      <h1>Nasar</h1>
-    </div>
-    <div class="about-hero-bio">
-      <p class="ss">
-        I'm a computer science and philosophy student at USask. I'm passionate about building robust machine learning models, backend infrastructures, and full-stack systems that solve real-world problems. When I'm not coding, you can usually find me out on a hike to the middle of nowhere. Simple things should be simple, complex things should be possible.
-      </p>
-      <p class="mn">ML / Backend / Systems / Nature</p>
-    </div>
-    <div class="about-hero-portrait">
-      <img
-        src="/images/services-header/portrait.jpeg"
-        alt="Nasar Siddiqui Portrait"
-      />
-    </div>
-  </section>
+      <section class="about-hero about-hero-compact">
+        <div class="about-hero-bio">
+          <p class="ss">
+            I'm a computer science and philosophy student at USask. I'm passionate about building robust machine learning models, backend infrastructures, and full-stack systems that solve real-world problems. When I'm not coding, you can usually find me out on a hike to the middle of nowhere. Simple things should be simple, complex things should be possible.
+          </p>
+          <p class="mn">ML / Backend / Systems</p>
+        </div>
+      </section>
 
+      <section class="services about-services" aria-label="Skills">
+        <div class="service-card" id="service-card-1">
+          <div class="service-card-inner">
+            <div class="service-card-content">
+              <h1>Machine Learning</h1>
+              <p class="ss service-card-tags">PyTorch, scikit-learn, NumPy, Continual Learning, Model Training & Evaluation</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-card" id="service-card-2">
+          <div class="service-card-inner">
+            <div class="service-card-content">
+              <h1>Backend Systems</h1>
+              <p class="ss service-card-tags">FastAPI, Flask, REST APIs, SQL, MySQL, Docker Containerization, GitHub Actions CI/CD</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-card" id="service-card-3">
+          <div class="service-card-inner">
+            <div class="service-card-content">
+              <h1>Fullstack Applications</h1>
+              <p class="ss service-card-tags">JavaScript, TypeScript, React framework, Tailwind CSS utility styling, Responsive Design</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-card" id="service-card-4">
+          <div class="service-card-inner">
+            <div class="service-card-content">
+              <h1>Philosophy & Writing</h1>
+              <p class="ss service-card-tags">Analytical reasoning, conceptual clear-thinking, architectural design, ethical considerations</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-
-
-
-
-
-
-
-
-
-
-      
+      <section class="experience-section" aria-labelledby="experience-title">
+        <div class="experience-header">
+          <h1 id="experience-title">Experience</h1>
+        </div>
+        <div class="experience-panel">
+          <aside class="experience-tabs" aria-label="Experience company">
+            <p class="mn active">Sunny and Safe Saskatchewan</p>
+          </aside>
+          <article class="experience-entry">
+            <div class="experience-entry-header">
+              <h2>Product & Technical Lead</h2>
+              <p class="mn">Aug 2025 - Present</p>
+            </div>
+            <p class="experience-company">Sunny and Safe Saskatchewan</p>
+            <ul class="experience-points">
+              <li>Led a 2-developer team by creating and managing tickets, delegating tasks, and resolving technical blockers during implementation.</li>
+              <li>Led the development of a public outreach website with campaign storytelling, educational resources, and impact metrics.</li>
+              <li>Leading the development of a UV-based sunscreen detection device that visualizes facial sunscreen coverage to improve public health and awareness initiatives.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
       <!-- portfolio showcase -->
       <section class="portfolio-showcase">
@@ -175,23 +232,66 @@
             <div class="portfolio-card" id="portfolio-card-1">
               <h2>Inference Gateway</h2>
               <p class="mn">Building robust and encrypted end-to-end inference pipelines for ML models.</p>
-              <div class="portfolio-card-links">
-                <a class="mn" href="#">View Project</a>
+              <div class="project-tech-stack" aria-label="Technologies used">
+                <span>FastAPI</span>
+                <span>Python</span>
+                <span>CKKS</span>
+                <span>OpenAPI</span>
+                <span>Docker</span>
               </div>
+              <details class="project-more">
+                <summary>
+                  <span>More details</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 15.5 5.75 9.25l1.4-1.4L12 12.68l4.85-4.83 1.4 1.4L12 15.5Z" />
+                  </svg>
+                </summary>
+                <p>
+                  Built as a privacy-preserving inference layer where clients can discover supported models, create encrypted sessions, submit ciphertext inputs, and decrypt responses locally while the server never receives plaintext data or secret keys.
+                </p>
+              </details>
             </div>
             <div class="portfolio-card" id="portfolio-card-2">
               <h2>Sunny & Safe Sask</h2>
               <p class="mn">A comprehensive platform to support awareness and safety in Saskatchewan.</p>
-              <div class="portfolio-card-links">
-                <a class="mn" href="#">View Project</a>
+              <div class="project-tech-stack" aria-label="Technologies used">
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>Tailwind</span>
+                <span>Responsive UI</span>
               </div>
+              <details class="project-more">
+                <summary>
+                  <span>More details</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 15.5 5.75 9.25l1.4-1.4L12 12.68l4.85-4.83 1.4 1.4L12 15.5Z" />
+                  </svg>
+                </summary>
+                <p>
+                  A public-facing education site focused on clear campaign storytelling, sun-safety resources, impact metrics, team information, contact pathways, and an SPF calculator that turns awareness into practical action.
+                </p>
+              </details>
             </div>
             <div class="portfolio-card" id="portfolio-card-3">
               <h2>Civic Voice</h2>
               <p class="mn">Empowering local engagement and communication for municipalities.</p>
-              <div class="portfolio-card-links">
-                <a class="mn" href="#">View Project</a>
+              <div class="project-tech-stack" aria-label="Technologies used">
+                <span>React Native</span>
+                <span>APIs</span>
+                <span>Data Modeling</span>
+                <span>Mobile UX</span>
               </div>
+              <details class="project-more">
+                <summary>
+                  <span>More details</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 15.5 5.75 9.25l1.4-1.4L12 12.68l4.85-4.83 1.4 1.4L12 15.5Z" />
+                  </svg>
+                </summary>
+                <p>
+                  Designed as a mobile-first civic dashboard that helps people identify representatives, track bills and policy activity, and move from political awareness to informed civic action without navigating fragmented government sites.
+                </p>
+              </details>
             </div>
           </div>
 
@@ -199,100 +299,6 @@
       </section>
 
       
-
-
-
-           <!-- home - services header -->
-           <section class="services-header">
-            <div class="services-header-content">
-              <div class="services-profile-icon">
-                <img
-                  src="/images/services-header/portrait.jpeg"
-                  alt="Nasar Siddiqui's Portrait"
-                />
-              </div>
-              <p>Simple things should be simple, complex things possible.</p>
-              <div class="services-header-title">
-                <h1>Machine Learning</h1>
-                <h1>& Backend Systems</h1>
-              </div>
-              <div class="services-header-arrow-icon">
-                <h1>&#8595;</h1>
-              </div>
-            </div>
-          </section>
-
-
-
-
-
-
-
-
-
-          
-    
-          <!-- home - services/skills section -->
-          <section class="services">
-            <div class="service-card" id="service-card-1">
-              <div class="service-card-inner">
-                <div class="service-card-content">
-                  <h1>Machine Learning</h1>
-                  <p class="ss" style="font-size: 1.5rem; opacity: 0.8; margin-top: 1rem;">PyTorch, scikit-learn, NumPy, Continual Learning, Model Training & Evaluation</p>
-                </div>
-                <div class="service-card-img">
-                  <img
-                    src="/images/services/service-1.jpg"
-                    alt="Machine Learning"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="service-card" id="service-card-2">
-              <div class="service-card-inner">
-                <div class="service-card-content">
-                  <h1>Backend Systems</h1>
-                  <p class="ss" style="font-size: 1.5rem; opacity: 0.8; margin-top: 1rem;">FastAPI, Flask, REST APIs, SQL, MySQL, Docker Containerization, GitHub Actions CI/CD</p>
-                </div>
-                <div class="service-card-img">
-                  <img
-                    src="/images/services/service-2.jpg"
-                    alt="Backend Development"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="service-card" id="service-card-3">
-              <div class="service-card-inner">
-                <div class="service-card-content">
-                  <h1>Fullstack Applications</h1>
-                  <p class="ss" style="font-size: 1.5rem; opacity: 0.8; margin-top: 1rem;">JavaScript, TypeScript, React framework, Tailwind CSS utility styling, Responsive Design</p>
-                </div>
-                <div class="service-card-img">
-                  <img
-                    src="/images/services/service-3.jpg"
-                    alt="Fullstack Applications"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="service-card" id="service-card-4">
-              <div class="service-card-inner">
-                <div class="service-card-content">
-                  <h1>Philosophy & Writing</h1>
-                  <p class="ss" style="font-size: 1.5rem; opacity: 0.8; margin-top: 1rem; color: #fff;">Analytical reasoning, conceptual clear-thinking, architectural design, ethical considerations</p>
-                </div>
-                <div class="service-card-img">
-                  <img
-                    src="/images/services/service-4.jpg"
-                    alt="Philosophy and Systems Design"
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
-
-
 
 
 
@@ -311,12 +317,19 @@
 
         <!-- home - contact cta -->
       <section class="contact-cta">
-        <div class="contact-button">
-          <a href="/contact"></a>
-          <div class="contact-text-small">
-            <p>Let's build something amazing together</p>
+        <div class="contact-card">
+          <p class="mn contact-card-eyebrow">Let's build something useful</p>
+          <h1>Contact</h1>
+          <div class="contact-card-links">
+            <a href="mailto:nasar.siddi@gmail.com">
+              <span>Email</span>
+              <strong>nasar.siddi@gmail.com</strong>
+            </a>
+            <a href="https://www.linkedin.com/in/nasarsidd" target="_blank">
+              <span>LinkedIn</span>
+              <strong>nasarsidd</strong>
+            </a>
           </div>
-          <div class="contact-text-large"><h1>Get in touch</h1></div>
         </div>
       </section>
 
@@ -348,10 +361,10 @@
         <div class="footer-col">
           <p>Connect</p>
           <p>
-            <a href="https://www.linkedin.com/in/muhammad-nasar-siddiqui/" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/nasarsidd" target="_blank">LinkedIn</a>
           </p>
           <p>
-            <a href="https://github.com/ar1shns" target="_blank"
+            <a href="https://github.com/argravee" target="_blank"
               >Github</a
             >
           </p>
@@ -386,7 +399,6 @@
     <script type="module" src="/js/hero.js"></script>
     <script type="module" src="/js/featured-work.js"></script>
     <script type="module" src="/js/services.js"></script>
-    <script type="module" src="/js/footer.js"></script>
     <script type="module" src="/js/about.js"></script>
     
     

@@ -13,13 +13,23 @@ nav {
   }
   
   nav .logo {
-    padding: 0.5em 0.65em;
+    padding: 0.55em;
     background-color: var(--fg);
   }
   
   nav .logo a {
+    display: grid;
+    width: 1.2rem;
+    height: 1.2rem;
+    place-items: center;
     color: var(--bg);
     user-select: none;
+  }
+
+  nav .logo .home-icon {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
   }
   
   nav .menu-toggle-btn {
@@ -41,6 +51,14 @@ nav {
   nav .menu-toggle-btn {
     border-radius: 0.4em;
     cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  body.hero-nav-hidden nav .logo,
+  body.hero-nav-hidden nav .menu-toggle-btn {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.75rem);
   }
   
   nav .menu-toggle-btn-wrapper {
@@ -59,11 +77,35 @@ nav {
     left: 0;
     width: 100vw;
     height: 100svh;
-    background-color: var(--bg2);
+    background:
+      radial-gradient(circle at 18% 20%, rgba(200, 90, 50, 0.2), transparent 28%),
+      radial-gradient(circle at 82% 72%, rgba(101, 128, 113, 0.22), transparent 30%),
+      var(--bg2);
     overflow: hidden;
     pointer-events: none;
     opacity: 0;
     z-index: 10;
+  }
+
+  .nav-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 1.25em;
+    border: 2px solid rgba(26, 43, 32, 0.18);
+    border-radius: 1.5em;
+    pointer-events: none;
+  }
+
+  .nav-overlay-kicker {
+    position: absolute;
+    top: 2em;
+    left: 50%;
+    display: flex;
+    gap: 1em;
+    transform: translateX(-50%);
+    color: var(--fg);
+    opacity: 0.78;
+    white-space: nowrap;
   }
   
   .nav-overlay .nav-items {
@@ -74,7 +116,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1em;
+    gap: 1.2em;
   }
   
   .nav-overlay .nav-items .nav-item {
@@ -82,12 +124,20 @@ nav {
     transform: translateY(100%);
     will-change: transform;
     opacity: 0;
-    border-radius: 0.5em;
-    background-color: var(--bg);
+    border: 2px solid var(--fg);
+    border-radius: 999px;
+    background-color: rgba(250, 246, 238, 0.82);
+    box-shadow: 5px 5px 0px rgba(26, 43, 32, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .nav-overlay .nav-items .nav-item:hover {
+    transform: translateY(0) rotate(-1deg);
+    box-shadow: 8px 8px 0px var(--accent1);
   }
   
   .nav-overlay .nav-items .nav-item p {
-    font-size: 2rem;
+    font-size: clamp(2.5rem, 7vw, 5rem);
     user-select: none;
   }
   
@@ -101,7 +151,42 @@ nav {
   
   .nav-overlay .nav-items .nav-item p a {
     display: block;
-    padding: 0.5em 0.5em 0.3em 0.5em;
+    padding: 0.18em 0.55em 0.12em 0.55em;
+  }
+
+  .social-dock {
+    position: fixed;
+    left: 2em;
+    bottom: 2em;
+    z-index: 80;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+  }
+
+  .social-dock a {
+    display: grid;
+    width: 2.4rem;
+    height: 2.4rem;
+    place-items: center;
+    border: 2px solid var(--fg);
+    border-radius: 999px;
+    background-color: rgba(250, 246, 238, 0.76);
+    color: var(--fg);
+    box-shadow: 3px 3px 0px rgba(26, 43, 32, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+
+  .social-dock a:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent2);
+    box-shadow: 5px 5px 0px var(--fg);
+  }
+
+  .social-dock svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    fill: currentColor;
   }
   
   .nav-overlay .nav-footer {
@@ -169,6 +254,18 @@ nav {
   @media (max-width: 1000px) {
     .nav-overlay .nav-items .nav-item p {
       font-size: 1.5rem;
+    }
+
+    .nav-overlay-kicker {
+      top: 6em;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .social-dock {
+      left: 1.25em;
+      bottom: 1.25em;
     }
   
     .nav-overlay .nav-footer {

@@ -1,11 +1,12 @@
 /* footer */
 footer {
+    display: none;
     position: relative;
     width: 100vw;
     height: 85svh;
     color: var(--bg);
     padding: 2em;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;

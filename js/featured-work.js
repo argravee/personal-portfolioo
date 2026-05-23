@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroTitle = document.querySelector(".portfolio-hero-title");
   const imgContainer = document.querySelector(".portfolio-image-container");
   const cards = gsap.utils.toArray(".portfolio-card");
+  if (!cycleImg || !heroTitle || !imgContainer || cards.length === 0) return;
   
   let scrollTriggerInstance = null;
   let currentImageIndex = 1;
@@ -56,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Reset initial states
-    gsap.set(heroTitle, { opacity: 1, scale: 1, y: 0 });
-    gsap.set(imgContainer, { scale: 0.25, rotation: -15, y: "-110%", x: "0%" });
+    gsap.set(heroTitle, { display: "flex", opacity: 1, scale: 1, y: 0 });
+    gsap.set(imgContainer, { scale: 0.32, rotation: -8, xPercent: -50, yPercent: -50, x: 0, y: 0 });
     gsap.set(cards, { opacity: 0, x: 50, display: "none" });
 
     scrollTriggerInstance = ScrollTrigger.create({
@@ -76,12 +77,18 @@ document.addEventListener("DOMContentLoaded", () => {
           
           let growProgress = p / 0.15;
           
-          gsap.set(heroTitle, { opacity: 1 - growProgress, scale: 1 + growProgress * 0.5 });
+          gsap.set(heroTitle, {
+            display: "flex",
+            opacity: 1 - growProgress,
+            scale: 1 + growProgress * 0.5,
+          });
           gsap.set(imgContainer, { 
-            scale: 0.25 + 1.25 * growProgress, // Grows bigger
-            rotation: -15 * (1 - growProgress), // rotates to 0
-            y: `${-110 + 110 * growProgress}%`, // slides into middle
-            x: "0%"
+            scale: 0.32 + 0.78 * growProgress, // Grows behind the centered title
+            rotation: -8 * (1 - growProgress), // rotates to 0
+            xPercent: -50,
+            yPercent: -50,
+            x: 0,
+            y: 0
           });
           
           // Cards hidden
@@ -98,9 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
           gsap.set(heroTitle, { opacity: 0, display: "none" });
           
           gsap.set(imgContainer, { 
-            scale: 1.5 - 0.7 * splitP, // Shrinks a bit to fit on left
+            scale: 1.1 - 0.3 * splitP, // Shrinks a bit to fit on left
+            xPercent: -50,
+            yPercent: -50,
             x: `${-25 * splitP}vw`, // Moves left
-            y: "0%", rotation: 0
+            y: 0, rotation: 0
           });
           
           gsap.set(cards, { display: "none", opacity: 0 });
@@ -110,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // --- 3. Hold Project 1 (0.25 to 0.4) ---
         else if (p >= 0.25 && p < 0.4) {
           cycleImg.src = "/images/work-items/work-item-1.png";
-          gsap.set(imgContainer, { scale: 0.8, x: "-25vw", y: "0%", rotation: 0 });
+          gsap.set(imgContainer, { scale: 0.8, xPercent: -50, yPercent: -50, x: "-25vw", y: 0, rotation: 0 });
           gsap.set(cards, { display: "none" });
           gsap.set(cards[0], { display: "block", opacity: 1, x: 0 });
         }
@@ -120,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
           cycleImg.src = "/images/work-items/work-item-2.png";
           let transP = (p - 0.4) / 0.1;
 
-          gsap.set(imgContainer, { scale: 0.8, x: "-25vw", y: "0%", rotation: 0 });
+          gsap.set(imgContainer, { scale: 0.8, xPercent: -50, yPercent: -50, x: "-25vw", y: 0, rotation: 0 });
           gsap.set(cards, { display: "none" });
           gsap.set(cards[0], { display: "block", opacity: 1 - transP, x: -50 * transP });
           gsap.set(cards[1], { display: "block", opacity: transP, x: 50 * (1 - transP) });
@@ -129,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // --- 5. Hold Project 2 (0.5 to 0.7) ---
         else if (p >= 0.5 && p < 0.7) {
           cycleImg.src = "/images/work-items/work-item-2.png";
-          gsap.set(imgContainer, { scale: 0.8, x: "-25vw", y: "0%", rotation: 0 });
+          gsap.set(imgContainer, { scale: 0.8, xPercent: -50, yPercent: -50, x: "-25vw", y: 0, rotation: 0 });
           gsap.set(cards, { display: "none" });
           gsap.set(cards[1], { display: "block", opacity: 1, x: 0 });
         }
@@ -139,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
           cycleImg.src = "/images/work-items/work-item-3.png";
           let transP = (p - 0.7) / 0.1;
 
-          gsap.set(imgContainer, { scale: 0.8, x: "-25vw", y: "0%", rotation: 0 });
+          gsap.set(imgContainer, { scale: 0.8, xPercent: -50, yPercent: -50, x: "-25vw", y: 0, rotation: 0 });
           gsap.set(cards, { display: "none" });
           gsap.set(cards[1], { display: "block", opacity: 1 - transP, x: -50 * transP });
           gsap.set(cards[2], { display: "block", opacity: transP, x: 50 * (1 - transP) });
@@ -148,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // --- 7. Hold Project 3 (0.8 to 1.0) ---
         else if (p >= 0.8) {
           cycleImg.src = "/images/work-items/work-item-3.png";
-          gsap.set(imgContainer, { scale: 0.8, x: "-25vw", y: "0%", rotation: 0 });
+          gsap.set(imgContainer, { scale: 0.8, xPercent: -50, yPercent: -50, x: "-25vw", y: 0, rotation: 0 });
           gsap.set(cards, { display: "none" });
           gsap.set(cards[2], { display: "block", opacity: 1, x: 0 });
         }

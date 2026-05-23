@@ -7,6 +7,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Wait for DOM to fully load before executing
 document.addEventListener("DOMContentLoaded", () => {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  window.scrollTo(0, 0);
+
   // Determine if device is mobile (width <= 900px)
   let isMobile = window.innerWidth <= 900;
 

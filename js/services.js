@@ -34,13 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Get all service card elements
     const services = gsap.utils.toArray(".service-card");
+    if (services.length === 0) return;
+    const lastService = services[services.length - 1];
 
     // Create main ScrollTrigger to track entire service section
     const mainTrigger = ScrollTrigger.create({
       trigger: services[0], // First service card as trigger
       start: "top 50%", // Start when top of first card hits 50% of viewport
-      endTrigger: services[services.length - 1], // Last service card
-      end: "top 150%", // End when last card's top hits 150% of viewport
+      endTrigger: lastService, // Last service card
+      end: "top 45%", // End when the final card reaches the pinned stack
     });
     scrollTriggerInstances.push(mainTrigger); // Store instance
 
@@ -54,8 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const pinTrigger = ScrollTrigger.create({
           trigger: service, // Current service card
           start: "top 45%", // Pin when top hits 45% of viewport
-          endTrigger: ".contact-cta", // End at contact CTA section
-          end: "top 90%", // End when contact CTA top hits 90% of viewport
+          endTrigger: lastService, // End within the services stack
+          end: "top 45%", // Stop before the next section pulls cards away
           pin: true, // Pin the card in place
           pinSpacing: false, // No extra spacing for pinned elements
         });
@@ -68,8 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
           scrollTrigger: {
             trigger: service, // Current service card
             start: "top 45%", // Start animation at 45% of viewport
-            endTrigger: ".contact-cta", // End at contact CTA
-            end: "top 90%", // End when contact CTA top hits 90%
+            endTrigger: lastService, // End within the services stack
+            end: "top 45%", // Stop with the cards still visibly stacked
             scrub: true, // Tie animation to scroll position
           },
         });
