@@ -1,6 +1,6 @@
 {
   "name": "Nasar Siddiqui Portfolio",
-  "description": "A coastal-themed computer science portfolio design with hand-drawn organic aesthetics.",
+  "description": "An award-winning inspired personal portfolio demonstrating modern web development capabilities, robust system and machine learning specialization for Nasar Siddiqui.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

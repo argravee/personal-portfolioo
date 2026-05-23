@@ -1,15 +1,394 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="/assets/favicon.ico" />
-    <!--<a href="https://www.flaticon.com/free-icons/rocky-mountains" title="rocky mountains icons">Rocky mountains icons created by Pop Vectors - Flaticon</a>-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nasar | SWE</title>
+    <title>Nasar Siddiqui | Portfolio</title>
+    <link rel="icon" href="/images/global/site-icon.png" />
+
+    <link rel="stylesheet" href="/css/transition.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/globals.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/work.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- page transition  -->
+    <div class="transition">
+      <div class="transition-overlay overlay-1"></div>
+      <div class="transition-overlay overlay-2"></div>
+      <div class="transition-overlay overlay-3"></div>
+      <div class="transition-overlay overlay-4"></div>
+      <div class="transition-overlay overlay-5"></div>
+    </div>
+
+    <div class="page home-page">
+        <!-- nav -->
+        <nav>
+          <div class="logo">
+            <div class="logo-container">
+              <p class="mn"><a href="/">N ✦ S</a></p>
+            </div>
+          </div>
+          <div class="menu-toggle-btn">
+            <div class="menu-toggle-btn-wrapper">
+              <p class="mn open-label">Menu</p>
+              <p class="mn close-label">Close</p>
+            </div>
+          </div>
+        </nav>
+  
+        <div class="nav-overlay">
+          <div class="nav-items">
+            <div class="nav-item active">
+              <p><a href="/">Home</a></p>
+            </div>
+
+            <!-- Might add in future but disabled for now - Prashant -->
+            <!-- <div class="nav-item">
+              <p><a href="/work">Work</a></p>
+            </div>
+            <div class="nav-item">
+              <p><a href="/about">About</a></p>
+            </div> -->
+            <div class="nav-item">
+              <p><a href="/contact">Contact</a></p>
+            </div>
+          </div>
+          <div class="nav-overlay">
+          </div>
+          <div class="nav-footer">
+            <div class="nav-footer-item">
+              <div class="nav-footer-item-header">
+                <p class="mn">Find Me</p>
+              </div>
+              <div class="nav-footer-item-copy">
+                <p class="mn"><a href="https://github.com/ar1shns" target="_blank">Github</a></p>
+                <p class="mn"><a href="https://www.linkedin.com/in/muhammad-nasar-siddiqui/" target="_blank">LinkedIn</a></p>
+              </div>
+            </div>
+            <div class="nav-footer-item">
+              <div class="nav-footer-item-copy">
+                <p class="mn"></p>
+              </div>
+            </div>
+            <div class="nav-footer-item">
+              <div class="nav-footer-item-header">
+                <p class="mn">Get in Touch</p>
+              </div>
+              <div class="nav-footer-item-copy">
+                <p class="mn">
+                  <a href="mailto:nasar.siddi@gmail.com" target="_blank"
+                    >nasar.siddi@gmail.com</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+             
+        <!-- home - hero -->
+      <section class="hero">
+        <div class="hero-header-wrapper">
+          <div class="hero-header hero-header-1">
+            <h1>Nasar</h1>
+          </div>
+          <div class="hero-header hero-header-2">
+            <h1>Siddiqui</h1>
+          </div>
+        </div>
+        <div class="hero-footer">
+          <div class="hero-footer-symbols">
+            <img src="/images/global/symbols.png" alt="" />
+          </div>
+          <div class="hero-footer-scroll-down">
+            <p class="mn"><a href="https://www.linkedin.com/in/muhammad-nasar-siddiqui/" target="_blank" class="resume-link"> Fetch // Profile</a></p>
+          </div>
+          <div class="hero-footer-tags">
+            <p class="mn">SWE Student // USask</p>
+          </div>
+        </div>
+      </section>
+
+<!-- about - about hero -->
+<section class="about-hero">
+    <div class="about-hero-header">
+      <h1>Hi, I'm</h1>
+      <h1>Nasar</h1>
+    </div>
+    <div class="about-hero-bio">
+      <p class="ss">
+        I'm a computer science and philosophy student at USask. I'm passionate about building robust machine learning models, backend infrastructures, and full-stack systems that solve real-world problems. When I'm not coding, you can usually find me out on a hike to the middle of nowhere. Simple things should be simple, complex things should be possible.
+      </p>
+      <p class="mn">ML / Backend / Systems / Nature</p>
+    </div>
+    <div class="about-hero-portrait">
+      <img
+        src="/images/services-header/portrait.jpeg"
+        alt="Nasar Siddiqui Portrait"
+      />
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      <!-- portfolio showcase -->
+      <section class="portfolio-showcase">
+        <div class="portfolio-pin-wrapper">
+          
+          <div class="portfolio-hero-title">
+            <div class="hero-header-wrapper">
+              <div class="hero-header hero-header-1">
+                <h1>Featured</h1>
+              </div>
+              <div class="hero-header hero-header-2">
+                <h1>Projects</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured-work-indicator"></div>
+
+          <div class="portfolio-image-container">
+            <div class="portfolio-image-inner">
+              <img class="portfolio-cycle-image" src="/images/work-items/work-item-1.png" alt="" />
+            </div>
+          </div>
+
+          <div class="portfolio-details-container">
+            <div class="portfolio-card" id="portfolio-card-1">
+              <h2>Inference Gateway</h2>
+              <p class="mn">Building robust and encrypted end-to-end inference pipelines for ML models.</p>
+              <div class="portfolio-card-links">
+                <a class="mn" href="#">View Project</a>
+              </div>
+            </div>
+            <div class="portfolio-card" id="portfolio-card-2">
+              <h2>Sunny & Safe Sask</h2>
+              <p class="mn">A comprehensive platform to support awareness and safety in Saskatchewan.</p>
+              <div class="portfolio-card-links">
+                <a class="mn" href="#">View Project</a>
+              </div>
+            </div>
+            <div class="portfolio-card" id="portfolio-card-3">
+              <h2>Civic Voice</h2>
+              <p class="mn">Empowering local engagement and communication for municipalities.</p>
+              <div class="portfolio-card-links">
+                <a class="mn" href="#">View Project</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      
+
+
+
+           <!-- home - services header -->
+           <section class="services-header">
+            <div class="services-header-content">
+              <div class="services-profile-icon">
+                <img
+                  src="/images/services-header/portrait.jpeg"
+                  alt="Nasar Siddiqui's Portrait"
+                />
+              </div>
+              <p>Simple things should be simple, complex things possible.</p>
+              <div class="services-header-title">
+                <h1>Machine Learning</h1>
+                <h1>& Backend Systems</h1>
+              </div>
+              <div class="services-header-arrow-icon">
+                <h1>&#8595;</h1>
+              </div>
+            </div>
+          </section>
+
+
+
+
+
+
+
+
+
+          
+    
+          <!-- home - services/skills section -->
+          <section class="services">
+            <div class="service-card" id="service-card-1">
+              <div class="service-card-inner">
+                <div class="service-card-content">
+                  <h1>Machine Learning</h1>
+                  <p class="ss" style="font-size: 1.5rem; opacity: 0.8; margin-top: 1rem;">PyTorch, scikit-learn, NumPy, Continual Learning, Model Training & Evaluation</p>
+                </div>
+                <div class="service-card-img">
+                  <img
+                    src="/images/services/service-1.jpg"
+                    alt="Machine Learning"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="service-card" id="service-card-2">
+              <div class="service-card-inner">
+                <div class="service-card-content">
+                  <h1>Backend Systems</h1>
+                  <p class="ss" style="font-size: 1.5rem; opacity: 0.8; margin-top: 1rem;">FastAPI, Flask, REST APIs, SQL, MySQL, Docker Containerization, GitHub Actions CI/CD</p>
+                </div>
+                <div class="service-card-img">
+                  <img
+                    src="/images/services/service-2.jpg"
+                    alt="Backend Development"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="service-card" id="service-card-3">
+              <div class="service-card-inner">
+                <div class="service-card-content">
+                  <h1>Fullstack Applications</h1>
+                  <p class="ss" style="font-size: 1.5rem; opacity: 0.8; margin-top: 1rem;">JavaScript, TypeScript, React framework, Tailwind CSS utility styling, Responsive Design</p>
+                </div>
+                <div class="service-card-img">
+                  <img
+                    src="/images/services/service-3.jpg"
+                    alt="Fullstack Applications"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="service-card" id="service-card-4">
+              <div class="service-card-inner">
+                <div class="service-card-content">
+                  <h1>Philosophy & Writing</h1>
+                  <p class="ss" style="font-size: 1.5rem; opacity: 0.8; margin-top: 1rem; color: #fff;">Analytical reasoning, conceptual clear-thinking, architectural design, ethical considerations</p>
+                </div>
+                <div class="service-card-img">
+                  <img
+                    src="/images/services/service-4.jpg"
+                    alt="Philosophy and Systems Design"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+        <!-- home - contact cta -->
+      <section class="contact-cta">
+        <div class="contact-button">
+          <a href="/contact"></a>
+          <div class="contact-text-small">
+            <p>Let's build something amazing together</p>
+          </div>
+          <div class="contact-text-large"><h1>Get in touch</h1></div>
+        </div>
+      </section>
+
+<!-- home - footer -->
+<footer>
+    <div class="footer-container">
+      <div class="footer-symbols footer-symbols-1">
+        <img src="/images/global/s6.png" alt="" />
+        <img src="/images/global/s6.png" alt="" />
+      </div>
+      <div class="footer-symbols footer-symbols-2">
+        <img src="/images/global/s6.png" alt="" />
+        <img src="/images/global/s6.png" alt="" />
+      </div>
+      <div class="footer-header">
+        <h1>Nasar Siddiqui</h1>
+      </div>
+      <div class="footer-row">
+        <div class="footer-col">
+          <p>Explore</p>
+          <p><a href="/">Home</a></p>
+          <p><a href="/contact">Contact</a></p>
+        </div>
+        <div class="footer-col">
+          <p>About Me</p>
+          <p><span style="opacity: 0.7">USask Student</span></p>
+          <p><span style="opacity: 0.7">Saskatoon, SK</span></p>
+        </div>
+        <div class="footer-col">
+          <p>Connect</p>
+          <p>
+            <a href="https://www.linkedin.com/in/muhammad-nasar-siddiqui/" target="_blank">LinkedIn</a>
+          </p>
+          <p>
+            <a href="https://github.com/ar1shns" target="_blank"
+              >Github</a
+            >
+          </p>
+        </div>
+        <div class="footer-col">
+          <p>Extras</p>
+          <p>
+            <a href="https://sunnyandsafe.ca/" target="_blank"
+              >Sunny and Safe Saskatchewan</a>
+          </p>
+          <p>
+            <a href="https://github.com/argravee/privacy-preserving-inference-gateway" target="_blank"
+              >Encrypted Inference Gateway</a>
+          </p>
+        </div>
+        
+      </div>
+      <div class="copyright-info">
+        <p class="mn">© - Nasar Siddiqui // 2026</p>
+        <p class="mn"></p>
+      </div>
+      <div class="explosion-container"></div>
+    </div>
+  </footer>
+
+
+
+    </div>
+    <script type="module" src="/js/transition.js"></script>
+    <script type="module" src="/js/lenis-scroll.js"></script>
+    <script type="module" src="/js/menu.js"></script>
+    <script type="module" src="/js/hero.js"></script>
+    <script type="module" src="/js/featured-work.js"></script>
+    <script type="module" src="/js/services.js"></script>
+    <script type="module" src="/js/footer.js"></script>
+    <script type="module" src="/js/about.js"></script>
+    
+    
   </body>
 </html>
-

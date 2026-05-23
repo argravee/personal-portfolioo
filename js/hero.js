@@ -1,0 +1,1 @@
+// hero.js (Logic moved to featured-work.js)
