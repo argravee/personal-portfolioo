@@ -70,6 +70,22 @@
     display: flex;
     justify-content: center;
   }
+
+  .hero .hero-footer-tags {
+    position: relative;
+    padding-bottom: 0.85em;
+  }
+
+  .hero .hero-footer-tags::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 5.5rem;
+    height: 2px;
+    background-color: var(--accent1);
+    transform: translateX(-50%);
+  }
   
   .hero .hero-footer .hero-footer-scroll-down {
     position: absolute;
@@ -307,11 +323,19 @@
     margin-bottom: 0.5em;
   }
 
+  .project-tech-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.45rem;
+    margin-top: 1.2rem;
+  }
+
   .project-tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 0.45rem;
-    margin-top: 1.2rem;
+    min-width: 0;
   }
 
   .project-tech-stack span {
@@ -327,6 +351,31 @@
     font-size: 0.68rem;
     line-height: 1;
     letter-spacing: 0.05em;
+  }
+
+  .project-link-icon {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 2px solid var(--fg);
+    border-radius: 999px;
+    background-color: var(--bg2);
+    color: var(--fg);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .project-link-icon:hover {
+    transform: translateY(-2px);
+    background-color: var(--accent2);
+    box-shadow: 4px 4px 0px var(--fg);
+  }
+
+  .project-link-icon svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: currentColor;
   }
 
   .project-more {
@@ -368,13 +417,24 @@
     background-color: var(--accent2);
   }
 
-  .project-more p {
+  .project-more p,
+  .project-more li {
     margin-top: 1rem;
     font-family: "formula-narrow", "Cormorant Garamond", Georgia, serif;
     font-size: clamp(1.15rem, 1.7vw, 1.35rem);
     font-weight: 600;
     line-height: 1.22;
     color: rgba(26, 43, 32, 0.82);
+  }
+
+  .project-more ul {
+    margin-top: 1rem;
+    padding-left: 1.1em;
+  }
+
+  .project-more li {
+    margin-top: 0.7rem;
+    padding-left: 0.15em;
   }
 
   .featured-work-indicator {
@@ -442,6 +502,7 @@
   .services .service-card-inner {
     position: relative;
     will-change: transform;
+    opacity: 1;
     width: calc(100vw - 4em);
     height: 100%;
     margin: 0 auto;
@@ -482,7 +543,7 @@
   }
   
   .services #service-card-1 .service-card-inner {
-    background-color: var(--accent1);
+    background-color: #b9a7cf;
   }
   
   .services #service-card-2 .service-card-inner {
@@ -490,12 +551,17 @@
   }
   
   .services #service-card-3 .service-card-inner {
-    background-color: var(--accent3);
+    background-color: #9fb49d;
   }
   
   .services #service-card-4 .service-card-inner {
-    background-color: var(--fg);
-    color: var(--bg);
+    background-color: #d99a6c;
+    color: var(--fg);
+  }
+
+  .services #service-card-5 .service-card-inner {
+    background-color: #c8b7a6;
+    color: var(--fg);
   }
   
   @media (max-width: 1000px) {
@@ -558,13 +624,12 @@
     }
 
     .portfolio-pin-wrapper {
-      display: grid;
-      gap: 2em;
+      position: relative;
+      display: block;
       height: auto;
     }
 
     .portfolio-hero-title,
-    .portfolio-image-container,
     .portfolio-details-container {
       position: relative;
       top: auto;
@@ -575,13 +640,24 @@
     }
 
     .portfolio-hero-title {
-      height: auto;
-      justify-content: flex-start;
-      text-align: left;
+      height: min(72svh, 640px);
+      justify-content: center;
+      text-align: center;
+      z-index: 10;
+      overflow: visible;
+    }
+
+    .portfolio-hero-title .hero-header.hero-header-1 {
+      transform: translateX(-4%);
+    }
+
+    .portfolio-hero-title .hero-header.hero-header-2 {
+      transform: translateX(5%);
     }
 
     .portfolio-hero-title .hero-header h1 {
-      font-size: clamp(4rem, 20vw, 7rem);
+      font-size: clamp(6rem, 28vw, 10rem);
+      line-height: 0.86;
     }
 
     .featured-work-indicator {
@@ -589,12 +665,26 @@
     }
 
     .portfolio-image-container {
+      position: absolute;
+      top: clamp(11rem, 34svh, 18rem);
+      left: 50%;
+      width: min(50vw, 13rem);
       aspect-ratio: 16 / 10;
+      z-index: 12;
+      pointer-events: none;
+    }
+
+    .portfolio-image-inner {
+      border-width: 0.2em;
+      border-radius: 1em;
+      box-shadow: 5px 5px 0px var(--fg);
     }
 
     .portfolio-details-container {
       display: grid;
       gap: 1.25em;
+      margin-top: 1.5em;
+      z-index: 2;
     }
 
     .portfolio-card {
@@ -614,6 +704,10 @@
 
     .project-tech-stack span {
       font-size: 0.62rem;
+    }
+
+    .project-tech-row {
+      align-items: flex-start;
     }
 
     .project-more {
@@ -653,6 +747,10 @@
 
     .services .service-card:nth-child(4) {
       z-index: 4;
+    }
+
+    .services .service-card:nth-child(5) {
+      z-index: 5;
       margin-bottom: 0;
     }
   

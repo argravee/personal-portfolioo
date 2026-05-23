@@ -17,18 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize animations
   const initAnimations = () => {
-    // Disable animations on small screens (width <= 1000px)
-    if (window.innerWidth <= 1000) {
-      scrollTriggerInstances.forEach((instance) => {
-        if (instance) instance.kill(true); // Clean up existing instances
-      });
-      scrollTriggerInstances = []; // Reset array
-      gsap.set(".service-card", { clearProps: "all" });
-      gsap.set(".service-card-inner", { clearProps: "all" });
-      ScrollTrigger.refresh();
-      return;
-    }
-
     // Clean up existing ScrollTrigger instances
     scrollTriggerInstances.forEach((instance) => {
       if (instance) instance.kill(true);
@@ -38,6 +26,43 @@ document.addEventListener("DOMContentLoaded", () => {
     // Get all service card elements
     const services = gsap.utils.toArray(".service-card");
     if (services.length === 0) return;
+
+    if (window.innerWidth <= 1000) {
+      gsap.set(".service-card", { clearProps: "all" });
+      gsap.set(".service-card-inner", { clearProps: "all" });
+      services.forEach((service, index) => {
+        const serviceCardInner = service.querySelector(".service-card-inner");
+        const direction = index % 2 === 0 ? -1 : 1;
+        gsap.set(serviceCardInner, {
+          opacity: index === 0 ? 1 : 0.82,
+          y: index === 0 ? 0 : 46,
+          scale: index === 0 ? 1 : 0.96,
+          rotate: direction * 1.4,
+          transformOrigin: "50% 100%",
+        });
+
+        const reveal = gsap.to(serviceCardInner, {
+          opacity: 1,
+          y: index === services.length - 1 ? 0 : -10,
+          scale: 1,
+          rotate: 0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: service,
+            start: "top 88%",
+            end: "top 42%",
+            scrub: 0.45,
+          },
+        });
+        scrollTriggerInstances.push(reveal.scrollTrigger);
+      });
+      ScrollTrigger.refresh();
+      return;
+    }
+
+    gsap.set(".service-card", { clearProps: "all" });
+    gsap.set(".service-card-inner", { clearProps: "opacity,scale,rotate,transformOrigin" });
+
     const lastService = services[services.length - 1];
 
     // Create main ScrollTrigger to track entire service section

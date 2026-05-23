@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = gsap.utils.toArray(".portfolio-card");
   if (!cycleImg || !heroTitle || !imgContainer || cards.length === 0) return;
   
-  let scrollTriggerInstance = null;
+  let scrollTriggerInstances = [];
   let currentImageIndex = 1;
   let isCycling = true;
   const totalImages = 3;
@@ -29,18 +29,60 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 250);
 
   const initAnimations = () => {
+    scrollTriggerInstances.forEach((instance) => {
+      if (instance) instance.kill(true);
+    });
+    scrollTriggerInstances = [];
+
     if (window.innerWidth <= 1000) {
-      if (scrollTriggerInstance) {
-        scrollTriggerInstance.kill(true);
-        scrollTriggerInstance = null;
-      }
       gsap.set([heroTitle, imgContainer, cards], { clearProps: "all" });
-      gsap.set(cards, { display: "block", opacity: 1, x: 0 });
+      gsap.set(heroTitle, { display: "flex", opacity: 1, scale: 1, y: 0 });
+      gsap.set(imgContainer, {
+        opacity: 0,
+        scale: 0.72,
+        rotation: -8,
+        xPercent: -50,
+        yPercent: -50,
+        x: 0,
+        y: 24,
+        transformOrigin: "50% 50%",
+      });
+      gsap.set(cards, { display: "block", opacity: 0, x: 0, y: 28 });
+
+      const imageReveal = gsap.to(imgContainer, {
+        opacity: 1,
+        scale: 1,
+        rotation: -3,
+        y: 0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".portfolio-showcase",
+          start: "top 78%",
+          end: "top 28%",
+          scrub: 0.45,
+        },
+      });
+      scrollTriggerInstances.push(imageReveal.scrollTrigger);
+
+      cards.forEach((card, index) => {
+        const cardReveal = gsap.to(card, {
+          opacity: 1,
+          y: 0,
+          duration: 0.55,
+          ease: "power2.out",
+          delay: index * 0.04,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 88%",
+            toggleActions: "play none none reverse",
+          },
+        });
+        scrollTriggerInstances.push(cardReveal.scrollTrigger);
+      });
+
       ScrollTrigger.refresh();
       return;
     }
-
-    if (scrollTriggerInstance) scrollTriggerInstance.kill(true);
 
     // Create section indicators
     const indicatorContainer = document.querySelector(".featured-work-indicator");
@@ -64,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.set(imgContainer, { scale: 0.32, rotation: -8, xPercent: -50, yPercent: -50, x: 0, y: 0 });
     gsap.set(cards, { opacity: 0, x: 50, display: "none" });
 
-    scrollTriggerInstance = ScrollTrigger.create({
+    const desktopTrigger = ScrollTrigger.create({
       trigger: ".portfolio-showcase",
       start: "top top",
       end: "+=5000", // 5000px duration
@@ -179,6 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     });
+    scrollTriggerInstances.push(desktopTrigger);
   };
 
   initAnimations();

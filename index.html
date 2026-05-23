@@ -141,7 +141,7 @@
       <section class="about-hero about-hero-compact">
         <div class="about-hero-bio">
           <p class="ss">
-            I'm a computer science and philosophy student at USask. I'm passionate about building robust machine learning models, backend infrastructures, and full-stack systems that solve real-world problems. When I'm not coding, you can usually find me out on a hike to the middle of nowhere. Simple things should be simple, complex things should be possible.
+            I'm a computer science and philosophy student at USask. I'm passionate about building robust machine learning models, backend infrastructures, and full-stack systems that solve real-world problems and make a difference in people's lives. When I'm not coding, you can usually find me on a hike I was wildly overconfident about.
           </p>
           <p class="mn">ML / Backend / Systems</p>
         </div>
@@ -159,24 +159,32 @@
         <div class="service-card" id="service-card-2">
           <div class="service-card-inner">
             <div class="service-card-content">
-              <h1>Backend Systems</h1>
-              <p class="ss service-card-tags">FastAPI, Flask, REST APIs, SQL, MySQL, Docker Containerization, GitHub Actions CI/CD</p>
+              <h1>Languages</h1>
+              <p class="ss service-card-tags">Python, SQL, Java, JavaScript, TypeScript</p>
             </div>
           </div>
         </div>
         <div class="service-card" id="service-card-3">
           <div class="service-card-inner">
             <div class="service-card-content">
-              <h1>Fullstack Applications</h1>
-              <p class="ss service-card-tags">JavaScript, TypeScript, React framework, Tailwind CSS utility styling, Responsive Design</p>
+              <h1>Backend & Systems</h1>
+              <p class="ss service-card-tags">FastAPI, Flask, REST APIs, MySQL, Supabase Edge Functions, OAuth</p>
             </div>
           </div>
         </div>
         <div class="service-card" id="service-card-4">
           <div class="service-card-inner">
             <div class="service-card-content">
+              <h1>Data & Developer Tools</h1>
+              <p class="ss service-card-tags">OpenAPI, JSON Schema, PostgreSQL, Supabase, Cron, Docker, GitHub Actions, MySQL</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-card" id="service-card-5">
+          <div class="service-card-inner">
+            <div class="service-card-content">
               <h1>Philosophy & Writing</h1>
-              <p class="ss service-card-tags">Analytical reasoning, conceptual clear-thinking, architectural design, ethical considerations</p>
+              <p class="ss service-card-tags">Clear arguments, careful tradeoffs, technical writing, ethics, and explaining hard ideas without making them worse.</p>
             </div>
           </div>
         </div>
@@ -230,14 +238,22 @@
 
           <div class="portfolio-details-container">
             <div class="portfolio-card" id="portfolio-card-1">
-              <h2>Inference Gateway</h2>
-              <p class="mn">Building robust and encrypted end-to-end inference pipelines for ML models.</p>
-              <div class="project-tech-stack" aria-label="Technologies used">
-                <span>FastAPI</span>
-                <span>Python</span>
-                <span>CKKS</span>
-                <span>OpenAPI</span>
-                <span>Docker</span>
+              <h2>Encrypted Inference Gateway</h2>
+              <p class="mn">A privacy-preserving ML inference gateway with formal API contracts, encrypted request handling, and reproducible benchmark tooling.</p>
+              <div class="project-tech-row">
+                <div class="project-tech-stack" aria-label="Technologies used">
+                  <span>Python</span>
+                  <span>FastAPI</span>
+                  <span>Pyfhel</span>
+                  <span>OpenAPI</span>
+                  <span>GitHub Actions</span>
+                  <span>Jupyter Notebook</span>
+                </div>
+                <a class="project-link-icon" href="https://github.com/argravee/privacy-preserving-inference-gateway" target="_blank" aria-label="Open Encrypted Inference Gateway on GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 4h6v6h-2V7.41l-8.29 8.3-1.42-1.42 8.3-8.29H14V4ZM5 6h6v2H7v9h9v-4h2v6H5V6Z" />
+                  </svg>
+                </a>
               </div>
               <details class="project-more">
                 <summary>
@@ -246,19 +262,31 @@
                     <path d="M12 15.5 5.75 9.25l1.4-1.4L12 12.68l4.85-4.83 1.4 1.4L12 15.5Z" />
                   </svg>
                 </summary>
-                <p>
-                  Built as a privacy-preserving inference layer where clients can discover supported models, create encrypted sessions, submit ciphertext inputs, and decrypt responses locally while the server never receives plaintext data or secret keys.
-                </p>
+                <ul>
+                  <li>Designed and implemented a privacy-preserving inference gateway for ML inference with formal JSON Schema and OpenAPI 3.1 contracts to ensure well-level correctness, interoperability, and safe client-server workflows.</li>
+                  <li>Built layered validation pipelines for CKKS-based encrypted inference, separating schema, envelope, and ciphertext checks to enforce safe deserialization and parameter compatibility before execution.</li>
+                  <li>Developed a Pyfhel-based reference backend and Python client SDK for model discovery, local session creation, client-side encryption/serialization, inference submission, encrypted result retrieval, and local decryption.</li>
+                  <li>Verified protocol behavior with end-to-end integration, ciphertext round-trip, and plaintext/encrypted agreement tests, then built reproducible benchmark tooling and GitHub Actions CI to quantify latency, throughput, payload growth, and output agreement while improving regression detection and release reliability.</li>
+                  <li>Optimized the encrypted inference path by caching reusable CKKS contexts across requests, cutting mean encrypted infer time from ~311.9 ms to ~85.0 ms and improving end-to-end throughput by ~2.5x.</li>
+                </ul>
               </details>
             </div>
             <div class="portfolio-card" id="portfolio-card-2">
               <h2>Sunny & Safe Sask</h2>
-              <p class="mn">A comprehensive platform to support awareness and safety in Saskatchewan.</p>
-              <div class="project-tech-stack" aria-label="Technologies used">
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Tailwind</span>
-                <span>Responsive UI</span>
+              <p class="mn">A public health website that turns sun-safety education into clear resources, campaign storytelling, and practical sunscreen awareness tools.</p>
+              <div class="project-tech-row">
+                <div class="project-tech-stack" aria-label="Technologies used">
+                  <span>TypeScript</span>
+                  <span>React</span>
+                  <span>Responsive UI</span>
+                  <span>Education</span>
+                  <span>SPF Tools</span>
+                </div>
+                <a class="project-link-icon" href="https://sunnyandsafe.ca/" target="_blank" aria-label="Open Sunny and Safe Saskatchewan website">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 4h6v6h-2V7.41l-8.29 8.3-1.42-1.42 8.3-8.29H14V4ZM5 6h6v2H7v9h9v-4h2v6H5V6Z" />
+                  </svg>
+                </a>
               </div>
               <details class="project-more">
                 <summary>
@@ -267,19 +295,27 @@
                     <path d="M12 15.5 5.75 9.25l1.4-1.4L12 12.68l4.85-4.83 1.4 1.4L12 15.5Z" />
                   </svg>
                 </summary>
-                <p>
-                  A public-facing education site focused on clear campaign storytelling, sun-safety resources, impact metrics, team information, contact pathways, and an SPF calculator that turns awareness into practical action.
-                </p>
+                <ul>
+                  <li>Built a public-facing outreach site for Sunny and Safe Saskatchewan to make sun-safety information easier to find, understand, and act on.</li>
+                  <li>Structured the site around campaign storytelling, educational resources, practical prevention guidance, and accessible contact pathways.</li>
+                  <li>Added interactive, user-facing tools and content areas that help visitors connect sunscreen habits with real-world UV protection and public health awareness.</li>
+                </ul>
               </details>
             </div>
             <div class="portfolio-card" id="portfolio-card-3">
               <h2>Civic Voice</h2>
-              <p class="mn">Empowering local engagement and communication for municipalities.</p>
-              <div class="project-tech-stack" aria-label="Technologies used">
-                <span>React Native</span>
-                <span>APIs</span>
-                <span>Data Modeling</span>
-                <span>Mobile UX</span>
+              <p class="mn">A full-stack mobile civic application that ingests, normalizes, and serves legislative and representative data across Canadian jurisdictions.</p>
+              <div class="project-tech-row">
+                <div class="project-tech-stack" aria-label="Technologies used">
+                  <span>Expo</span>
+                  <span>React</span>
+                  <span>TypeScript</span>
+                  <span>Supabase</span>
+                  <span>PostgreSQL</span>
+                  <span>Edge Functions</span>
+                  <span>Cron</span>
+                  <span>OAuth</span>
+                </div>
               </div>
               <details class="project-more">
                 <summary>
@@ -288,9 +324,13 @@
                     <path d="M12 15.5 5.75 9.25l1.4-1.4L12 12.68l4.85-4.83 1.4 1.4L12 15.5Z" />
                   </svg>
                 </summary>
-                <p>
-                  Designed as a mobile-first civic dashboard that helps people identify representatives, track bills and policy activity, and move from political awareness to informed civic action without navigating fragmented government sites.
-                </p>
+                <ul>
+                  <li>Architected and built a full-stack mobile application that ingests, normalizes, and serves official legislative, policy, and representative data across multiple Canadian jurisdictions.</li>
+                  <li>Designed a PostgreSQL/Supabase data layer with scheduled refresh jobs, serverless ingestion functions, public read views, and caching strategies for low-latency access to frequently updated public datasets.</li>
+                  <li>Built server-driven push notification workflows for user-relevant civic changes, including device token registration, subscription synchronization, queued dispatch, and delivery test infrastructure.</li>
+                  <li>Implemented email/password authentication, password reset, and backend-synced user state for preferences, saved content, and tracked civic activity.</li>
+                  <li>Developed internal observability surfaces for refresh-status monitoring, data freshness validation, and backend debugging, improving confidence in scheduled ingestion and notification pipelines.</li>
+                </ul>
               </details>
             </div>
           </div>
@@ -318,7 +358,7 @@
         <!-- home - contact cta -->
       <section class="contact-cta">
         <div class="contact-card">
-          <p class="mn contact-card-eyebrow">Let's build something useful</p>
+          <p class="mn contact-card-eyebrow">Let's work together</p>
           <h1>Contact</h1>
           <div class="contact-card-links">
             <a href="mailto:nasar.siddi@gmail.com">
