@@ -19,6 +19,10 @@
     color: var(--fg);
     overflow-x: hidden;
   }
+
+  html {
+    scroll-padding-top: 5rem;
+  }
   
   body::-webkit-scrollbar {
     width: 0;

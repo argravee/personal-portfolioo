@@ -8,7 +8,43 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded");
 
   // Trigger initial reveal transition on page load
-  revealTransition();
+  playInitialLoad();
+
+  function playInitialLoad() {
+    const loaderIntro = document.querySelector(".loader-intro");
+    const loaderLine = document.querySelector(".loader-line span");
+    const loaderItems = document.querySelectorAll(".loader-mark > *");
+
+    gsap.set(".transition-overlay", { scaleY: 1, transformOrigin: "top" });
+
+    if (!loaderIntro || !loaderLine) {
+      revealTransition();
+      return;
+    }
+
+    const timeline = gsap.timeline({
+      defaults: { ease: "power3.out" },
+      onComplete: revealTransition,
+    });
+
+    timeline
+      .from(loaderItems, {
+        y: 24,
+        opacity: 0,
+        duration: 0.65,
+        stagger: 0.08,
+      })
+      .to(loaderLine, {
+        scaleX: 1,
+        duration: 0.9,
+        ease: "power2.inOut",
+      }, "-=0.25")
+      .to(loaderIntro, {
+        yPercent: -100,
+        duration: 0.85,
+        ease: "power3.inOut",
+      }, "+=0.15");
+  }
 
   // Reveal Transition: Animates overlay scaling down to reveal page
   function revealTransition() {
@@ -92,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (
         href &&
         (href.startsWith("http") ||
+          href.startsWith("#") ||
           href.startsWith("mailto:") ||
           href.startsWith("tel:"))
       ) {

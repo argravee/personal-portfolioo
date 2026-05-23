@@ -20,6 +20,16 @@
   <body>
     <!-- page transition  -->
     <div class="transition">
+      <div class="loader-intro" aria-label="Loading portfolio">
+        <div class="loader-mark">
+          <p class="mn">Portfolio</p>
+          <h1>Nasar Siddiqui</h1>
+          <div class="loader-line" aria-hidden="true">
+            <span></span>
+          </div>
+          <p class="mn">SWE & Philosophy // USASK</p>
+        </div>
+      </div>
       <div class="transition-overlay overlay-1"></div>
       <div class="transition-overlay overlay-2"></div>
       <div class="transition-overlay overlay-3"></div>
@@ -30,72 +40,31 @@
     <div class="page home-page">
         <!-- nav -->
         <nav>
-          <div class="logo">
-            <div class="logo-container">
-              <a class="home-icon-link" href="/" aria-label="Home">
-                <svg class="home-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 10.75 12 4l8 6.75V20h-5v-6H9v6H4v-9.25Z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="menu-toggle-btn">
+          <button class="menu-toggle-btn" type="button" aria-label="Open navigation" aria-expanded="false">
             <div class="menu-toggle-btn-wrapper">
-              <p class="mn open-label">Menu</p>
-              <p class="mn close-label">Close</p>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-          </div>
+          </button>
         </nav>
   
         <div class="nav-overlay">
-          <div class="nav-overlay-kicker">
-            <p class="mn">Nasar Siddiqui</p>
-            <p class="mn">SWE & Philosophy // USASK</p>
-          </div>
           <div class="nav-items">
             <div class="nav-item active">
-              <p><a href="/">Home</a></p>
-            </div>
-
-            <!-- Might add in future but disabled for now - Prashant -->
-            <!-- <div class="nav-item">
-              <p><a href="/work">Work</a></p>
+              <p><a href="#home">Home</a></p>
             </div>
             <div class="nav-item">
-              <p><a href="/about">About</a></p>
-            </div> -->
+              <p><a href="#skills">Skills</a></p>
+            </div>
             <div class="nav-item">
-              <p><a href="/contact">Contact</a></p>
+              <p><a href="#experience">Experience</a></p>
             </div>
-          </div>
-          <div class="nav-overlay">
-          </div>
-          <div class="nav-footer">
-            <div class="nav-footer-item">
-              <div class="nav-footer-item-header">
-                <p class="mn">Find Me</p>
-              </div>
-              <div class="nav-footer-item-copy">
-                <p class="mn"><a href="https://github.com/argravee" target="_blank">Github</a></p>
-                <p class="mn"><a href="https://www.linkedin.com/in/nasarsidd" target="_blank">LinkedIn</a></p>
-              </div>
+            <div class="nav-item">
+              <p><a href="#projects">Projects</a></p>
             </div>
-            <div class="nav-footer-item">
-              <div class="nav-footer-item-copy">
-                <p class="mn"></p>
-              </div>
-            </div>
-            <div class="nav-footer-item">
-              <div class="nav-footer-item-header">
-                <p class="mn">Get in Touch</p>
-              </div>
-              <div class="nav-footer-item-copy">
-                <p class="mn">
-                  <a href="mailto:nasar.siddi@gmail.com" target="_blank"
-                    >nasar.siddi@gmail.com</a
-                  >
-                </p>
-              </div>
+            <div class="nav-item">
+              <p><a href="#contact">Contact</a></p>
             </div>
           </div>
         </div>
@@ -118,7 +87,7 @@
         </div>
              
         <!-- home - hero -->
-      <section class="hero">
+      <section class="hero" id="home">
         <div class="availability-stamp" aria-label="Available for freelance work in May 2026">
           <p class="mn">Available for freelance work</p>
           <h2>MAY '26</h2>
@@ -147,7 +116,7 @@
         </div>
       </section>
 
-      <section class="services about-services" aria-label="Skills">
+      <section class="services about-services" id="skills" aria-label="Skills">
         <div class="service-card" id="service-card-1">
           <div class="service-card-inner">
             <div class="service-card-content">
@@ -184,13 +153,13 @@
           <div class="service-card-inner">
             <div class="service-card-content">
               <h1>Philosophy & Writing</h1>
-              <p class="ss service-card-tags">Clear arguments, careful tradeoffs, technical writing, ethics, and explaining hard ideas without making them worse.</p>
+              <p class="ss service-card-tags">Ethics, Epistemology, Political Philosophy, Philosophy of Science, Technical Writing, Argumentation</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="experience-section" aria-labelledby="experience-title">
+      <section class="experience-section" id="experience" aria-labelledby="experience-title">
         <div class="experience-header">
           <h1 id="experience-title">Experience</h1>
         </div>
@@ -214,7 +183,7 @@
       </section>
 
       <!-- portfolio showcase -->
-      <section class="portfolio-showcase">
+      <section class="portfolio-showcase" id="projects">
         <div class="portfolio-pin-wrapper">
           
           <div class="portfolio-hero-title">
@@ -246,6 +215,7 @@
                   <span>FastAPI</span>
                   <span>Pyfhel</span>
                   <span>OpenAPI</span>
+                  <span>JSON</span>
                   <span>GitHub Actions</span>
                   <span>Jupyter Notebook</span>
                 </div>
@@ -263,11 +233,11 @@
                   </svg>
                 </summary>
                 <ul>
-                  <li>Designed and implemented a privacy-preserving inference gateway for ML inference with formal JSON Schema and OpenAPI 3.1 contracts to ensure well-level correctness, interoperability, and safe client-server workflows.</li>
-                  <li>Built layered validation pipelines for CKKS-based encrypted inference, separating schema, envelope, and ciphertext checks to enforce safe deserialization and parameter compatibility before execution.</li>
-                  <li>Developed a Pyfhel-based reference backend and Python client SDK for model discovery, local session creation, client-side encryption/serialization, inference submission, encrypted result retrieval, and local decryption.</li>
-                  <li>Verified protocol behavior with end-to-end integration, ciphertext round-trip, and plaintext/encrypted agreement tests, then built reproducible benchmark tooling and GitHub Actions CI to quantify latency, throughput, payload growth, and output agreement while improving regression detection and release reliability.</li>
-                  <li>Optimized the encrypted inference path by caching reusable CKKS contexts across requests, cutting mean encrypted infer time from ~311.9 ms to ~85.0 ms and improving end-to-end throughput by ~2.5x.</li>
+                  <li>Designed and implemented a <strong>privacy-preserving inference gateway</strong> for ML inference with formal <strong>JSON Schema</strong> and <strong>OpenAPI 3.1</strong> contracts to ensure wire-level correctness, interoperability, and safe client-server workflows.</li>
+                  <li>Built layered validation pipelines for <strong>CKKS-based encrypted inference</strong>, separating schema, envelope, and ciphertext checks to enforce safe deserialization and parameter compatibility before execution.</li>
+                  <li>Developed a <strong>Pyfhel-based reference backend</strong> and Python client SDK for model discovery, local session creation, client-side encryption/serialization, inference submission, encrypted result retrieval, and local decryption.</li>
+                  <li>Verified protocol behavior with end-to-end integration, ciphertext round-trip, and plaintext/encrypted agreement tests, then built reproducible benchmark tooling and <strong>GitHub Actions CI</strong> to quantify latency, throughput, payload growth, and output agreement while improving regression detection and release reliability.</li>
+                  <li>Optimized the encrypted inference path by caching reusable <strong>CKKS contexts</strong> across requests, cutting mean encrypted infer time from <strong>~311.9 ms</strong> to <strong>~85.0 ms</strong> and improving end-to-end throughput by <strong>~2.5x</strong>.</li>
                 </ul>
               </details>
             </div>
@@ -280,7 +250,6 @@
                   <span>React</span>
                   <span>Responsive UI</span>
                   <span>Education</span>
-                  <span>SPF Tools</span>
                 </div>
                 <a class="project-link-icon" href="https://sunnyandsafe.ca/" target="_blank" aria-label="Open Sunny and Safe Saskatchewan website">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -325,11 +294,11 @@
                   </svg>
                 </summary>
                 <ul>
-                  <li>Architected and built a full-stack mobile application that ingests, normalizes, and serves official legislative, policy, and representative data across multiple Canadian jurisdictions.</li>
-                  <li>Designed a PostgreSQL/Supabase data layer with scheduled refresh jobs, serverless ingestion functions, public read views, and caching strategies for low-latency access to frequently updated public datasets.</li>
-                  <li>Built server-driven push notification workflows for user-relevant civic changes, including device token registration, subscription synchronization, queued dispatch, and delivery test infrastructure.</li>
-                  <li>Implemented email/password authentication, password reset, and backend-synced user state for preferences, saved content, and tracked civic activity.</li>
-                  <li>Developed internal observability surfaces for refresh-status monitoring, data freshness validation, and backend debugging, improving confidence in scheduled ingestion and notification pipelines.</li>
+                  <li>Architected and built a <strong>full-stack mobile application</strong> that ingests, normalizes, and serves official legislative, policy, and representative data across multiple Canadian jurisdictions.</li>
+                  <li>Designed a <strong>PostgreSQL/Supabase</strong> data layer with scheduled refresh jobs, serverless ingestion functions, public read views, and caching strategies for low-latency access to frequently updated public datasets.</li>
+                  <li>Built <strong>server-driven push notification</strong> workflows for user-relevant civic changes, including device token registration, subscription synchronization, queued dispatch, and delivery test infrastructure.</li>
+                  <li>Implemented <strong>email/password authentication</strong>, password reset, and backend-synced user state for preferences, saved content, and tracked civic activity.</li>
+                  <li>Developed <strong>internal observability surfaces</strong> for refresh-status monitoring, data freshness validation, and backend debugging, improving confidence in scheduled ingestion and notification pipelines.</li>
                 </ul>
               </details>
             </div>
@@ -356,7 +325,7 @@
 
 
         <!-- home - contact cta -->
-      <section class="contact-cta">
+      <section class="contact-cta" id="contact">
         <div class="contact-card">
           <p class="mn contact-card-eyebrow">Let's work together</p>
           <h1>Contact</h1>

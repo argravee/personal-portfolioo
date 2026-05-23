@@ -257,9 +257,9 @@
 
   .portfolio-image-container {
     position: absolute;
-    top: 50%;
+    top: 26%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     width: 45vw;
     aspect-ratio: 16 / 10;
     z-index: 2;
@@ -293,25 +293,39 @@
 
   .portfolio-details-container {
     position: absolute;
-    top: 50%;
-    right: 10%;
-    transform: translate(0, -50%);
-    width: 35vw;
+    top: 26%;
+    right: 5%;
+    transform: none;
+    width: min(46vw, 760px);
     z-index: 15;
   }
 
   .portfolio-card {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
-    transform: translateY(-50%);
+    transform: none;
     width: 100%;
-    padding: 3em;
+    padding: clamp(2rem, 2.5vw, 3em);
     background: var(--bg);
     border: 3px solid var(--fg);
     border-radius: 1.5em;
     display: none; /* controlled by GSAP */
     box-shadow: 8px 8px 0px var(--fg);
+    max-height: 90svh;
+    overflow-y: visible;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--fg) transparent;
+  }
+
+  .portfolio-card::-webkit-scrollbar {
+    width: 0.45rem;
+  }
+
+  .portfolio-card::-webkit-scrollbar-thumb {
+    background-color: var(--fg);
+    border-radius: 999px;
   }
 
   .portfolio-card h2 {
@@ -421,20 +435,29 @@
   .project-more li {
     margin-top: 1rem;
     font-family: "formula-narrow", "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(1.15rem, 1.7vw, 1.35rem);
+    font-size: clamp(1.05rem, 1.35vw, 1.25rem);
     font-weight: 600;
-    line-height: 1.22;
+    line-height: 1.16;
     color: rgba(26, 43, 32, 0.82);
   }
 
   .project-more ul {
     margin-top: 1rem;
     padding-left: 1.1em;
+    max-height: none;
+    overflow-y: visible;
+    overscroll-behavior: auto;
+    padding-right: 0.65em;
   }
 
   .project-more li {
-    margin-top: 0.7rem;
+    margin-top: 0.55rem;
     padding-left: 0.15em;
+  }
+
+  .project-more strong {
+    color: var(--accent1);
+    font-weight: 800;
   }
 
   .featured-work-indicator {
