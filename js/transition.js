@@ -31,19 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
       .from(loaderItems, {
         y: 24,
         opacity: 0,
-        duration: 0.65,
-        stagger: 0.08,
+        duration: 0.85,
+        stagger: 0.1,
       })
       .to(loaderLine, {
         scaleX: 1,
-        duration: 0.9,
+        duration: 1.2,
         ease: "power2.inOut",
-      }, "-=0.25")
+      }, "-=0.2")
       .to(loaderIntro, {
         yPercent: -100,
-        duration: 0.85,
+        duration: 1.05,
         ease: "power3.inOut",
-      }, "+=0.15");
+      }, "+=0.25");
   }
 
   // Reveal Transition: Animates overlay scaling down to reveal page
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Animate overlay to scaleY: 0 (disappears) over 0.6s with stagger
       gsap.to(".transition-overlay", {
         scaleY: 0, // Shrink overlay vertically
-        duration: 0.6, // Animation duration
+        duration: 0.8, // Animation duration
         stagger: -0.1, // Negative stagger for overlapping animations
         ease: "power2.inOut", // Smooth easing function
         onComplete: resolve, // Resolve promise when animation completes

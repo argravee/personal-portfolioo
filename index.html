@@ -174,10 +174,24 @@
           <h1 id="experience-title">Experience</h1>
         </div>
         <div class="experience-panel">
-          <aside class="experience-tabs" aria-label="Experience company">
-            <p class="mn active">Sunny and Safe Saskatchewan</p>
-          </aside>
-          <article class="experience-entry">
+        <aside class="experience-tabs" aria-label="Experience company">
+          <button class="mn active" type="button" data-experience-tab="freelance" aria-selected="true">Private Client Work</button>
+          <button class="mn" type="button" data-experience-tab="sunny" aria-selected="false">Sunny and Safe Saskatchewan</button>
+        </aside>
+        <div class="experience-entries">
+          <article class="experience-entry active" data-experience-panel="freelance">
+            <div class="experience-entry-header">
+              <h2>Freelance Software Developer</h2>
+              <p class="mn">May - June 2026</p>
+            </div>
+            <p class="experience-company">Private Client Work</p>
+            <ul class="experience-points">
+              <li>Built an internal sales-engineering tool for a commercial energy client to support pre-sales evaluation of battery-storage opportunities.</li>
+              <li>Designed a guided intake and scoring workflow that translated facility and energy-use inputs into prioritized opportunity assessments.</li>
+              <li>Developed summary reporting features that helped sales and technical teams explain fit, uncertainty, and recommended next steps during early customer evaluation.</li>
+            </ul>
+          </article>
+          <article class="experience-entry" data-experience-panel="sunny" hidden>
             <div class="experience-entry-header">
               <h2>Product & Technical Lead</h2>
               <p class="mn">Aug 2025 - Present</p>
@@ -189,6 +203,7 @@
               <li>Leading the development of a UV-based sunscreen detection device that visualizes facial sunscreen coverage to improve public health and awareness initiatives.</li>
             </ul>
           </article>
+        </div>
         </div>
       </section>
 
@@ -418,6 +433,7 @@
     <script type="module" src="/js/hero.js"></script>
     <script type="module" src="/js/featured-work.js"></script>
     <script type="module" src="/js/services.js"></script>
+    <script type="module" src="/js/experience.js"></script>
     <script type="module" src="/js/about.js"></script>
     
     
