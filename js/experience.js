@@ -26,6 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (isActive) {
         syncActiveMarker(tab);
+        tab.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "start",
+        });
       }
     });
 
