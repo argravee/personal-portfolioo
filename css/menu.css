@@ -29,7 +29,8 @@ nav .menu-toggle-btn {
 
 nav .menu-toggle-btn:hover,
 nav .menu-toggle-btn.menu-open {
-  background-color: var(--accent2);
+  background-color: var(--accent1);
+  color: var(--bg);
   box-shadow: 5px 5px 0px var(--fg);
 }
 
@@ -146,10 +147,13 @@ body.hero-nav-hidden nav .menu-toggle-btn {
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.social-dock a:hover {
+.social-dock a:hover,
+.social-dock a:focus-visible {
   transform: translateY(-3px);
-  background-color: var(--accent2);
+  background-color: var(--accent1);
+  color: var(--bg);
   box-shadow: 5px 5px 0px var(--fg);
+  outline: none;
 }
 
 .social-dock svg {

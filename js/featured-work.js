@@ -13,12 +13,53 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroTitle = document.querySelector(".portfolio-hero-title");
   const imgContainer = document.querySelector(".portfolio-image-container");
   const cards = gsap.utils.toArray(".portfolio-card");
+  const lightbox = document.querySelector(".project-image-lightbox");
+  const lightboxImage = document.querySelector(".project-image-lightbox-image");
+  const lightboxClose = document.querySelector(".project-image-lightbox-close");
   if (!cycleImg || !heroTitle || !imgContainer || cards.length === 0) return;
   
   let scrollTriggerInstances = [];
   let currentImageIndex = 1;
   let isCycling = true;
+  let cyclingBeforeLightbox = true;
+  let lightboxTrigger = null;
   const totalImages = 3;
+
+  const closeLightbox = () => {
+    if (!lightbox || lightbox.hidden) return;
+    lightbox.hidden = true;
+    document.body.style.overflow = "";
+    isCycling = cyclingBeforeLightbox;
+    lightboxTrigger?.focus();
+  };
+
+  const openLightbox = () => {
+    if (!lightbox || !lightboxImage || !lightboxClose) return;
+    if (window.innerWidth <= 1000) return;
+    cyclingBeforeLightbox = isCycling;
+    isCycling = false;
+    lightboxTrigger = imgContainer;
+    lightboxImage.src = cycleImg.currentSrc || cycleImg.src;
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+    lightboxClose.focus();
+  };
+
+  imgContainer.addEventListener("click", openLightbox);
+  imgContainer.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openLightbox();
+    }
+  });
+
+  lightboxClose?.addEventListener("click", closeLightbox);
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeLightbox();
+  });
 
   // Cycle interval
   const interval = setInterval(() => {
@@ -171,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // --- 4. Transition to Project 2 (0.4 to 0.5) ---
         else if (p >= 0.4 && p < 0.5) {
-          cycleImg.src = "/images/work-items/work-item-2.png";
+          cycleImg.src = "/images/work-items/work-item-3.png";
           let transP = (p - 0.4) / 0.1;
 
           gsap.set(imgContainer, { scale: 0.8, xPercent: -50, yPercent: 0, x: "-25vw", y: 0, rotation: 0 });
@@ -182,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // --- 5. Hold Project 2 (0.5 to 0.7) ---
         else if (p >= 0.5 && p < 0.7) {
-          cycleImg.src = "/images/work-items/work-item-2.png";
+          cycleImg.src = "/images/work-items/work-item-3.png";
           gsap.set(imgContainer, { scale: 0.8, xPercent: -50, yPercent: 0, x: "-25vw", y: 0, rotation: 0 });
           gsap.set(cards, { display: "none" });
           gsap.set(cards[1], { display: "block", opacity: 1, x: 0 });
@@ -190,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // --- 6. Transition to Project 3 (0.7 to 0.8) ---
         else if (p >= 0.7 && p < 0.8) {
-          cycleImg.src = "/images/work-items/work-item-3.png";
+          cycleImg.src = "/images/work-items/work-item-2.png";
           let transP = (p - 0.7) / 0.1;
 
           gsap.set(imgContainer, { scale: 0.8, xPercent: -50, yPercent: 0, x: "-25vw", y: 0, rotation: 0 });
@@ -201,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // --- 7. Hold Project 3 (0.8 to 1.0) ---
         else if (p >= 0.8) {
-          cycleImg.src = "/images/work-items/work-item-3.png";
+          cycleImg.src = "/images/work-items/work-item-2.png";
           gsap.set(imgContainer, { scale: 0.8, xPercent: -50, yPercent: 0, x: "-25vw", y: 0, rotation: 0 });
           gsap.set(cards, { display: "none" });
           gsap.set(cards[2], { display: "block", opacity: 1, x: 0 });

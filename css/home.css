@@ -309,6 +309,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: zoom-in;
+  }
+
+  .portfolio-image-container:focus-visible {
+    outline: 3px solid var(--accent1);
+    outline-offset: 0.55rem;
+    border-radius: 2em;
   }
 
   .portfolio-image-inner {
@@ -527,6 +534,83 @@
     height: 1.5px;
     background-color: var(--bg);
     opacity: 0.2;
+  }
+
+  .project-image-lightbox[hidden] {
+    display: none;
+  }
+
+  .project-image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: clamp(1.25rem, 5vw, 4rem);
+    background-color: rgba(26, 43, 32, 0.78);
+    backdrop-filter: blur(5px);
+    cursor: zoom-out;
+  }
+
+  .project-image-lightbox-frame {
+    width: min(1120px, 90vw);
+    max-height: min(82svh, 820px);
+    padding: clamp(0.65rem, 1.5vw, 1rem);
+    border: 3px solid var(--fg);
+    border-radius: clamp(1rem, 2vw, 1.75rem);
+    background:
+      radial-gradient(circle at 15% 12%, rgba(200, 90, 50, 0.15), transparent 30%),
+      var(--bg);
+    box-shadow: 10px 10px 0px var(--accent1);
+    cursor: default;
+  }
+
+  .project-image-lightbox-image {
+    width: 100%;
+    max-height: calc(min(82svh, 820px) - 2rem);
+    display: block;
+    object-fit: contain;
+    border-radius: clamp(0.55rem, 1.2vw, 1rem);
+  }
+
+  .project-image-lightbox-close {
+    position: absolute;
+    top: clamp(1.15rem, 3vw, 2rem);
+    right: clamp(1.15rem, 3vw, 2rem);
+    z-index: 1;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid var(--fg);
+    border-radius: 999px;
+    background-color: var(--bg);
+    color: var(--fg);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .project-image-lightbox-close:hover,
+  .project-image-lightbox-close:focus-visible {
+    background-color: var(--accent1);
+    color: var(--bg);
+    transform: rotate(4deg);
+    outline: none;
+  }
+
+  .project-image-lightbox-close span {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0.8rem;
+    width: 1.35rem;
+    height: 2px;
+    background-color: currentColor;
+  }
+
+  .project-image-lightbox-close span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .project-image-lightbox-close span:last-child {
+    transform: rotate(-45deg);
   }
 
   @media (max-width: 1000px) {
@@ -782,6 +866,7 @@
       aspect-ratio: 16 / 10;
       z-index: 12;
       pointer-events: none;
+      cursor: default;
     }
 
     .portfolio-image-inner {
@@ -823,6 +908,27 @@
     .project-more {
       margin-top: 1.4rem;
       padding-top: 1rem;
+    }
+
+    .project-image-lightbox {
+      padding: 1rem;
+    }
+
+    .project-image-lightbox-frame {
+      width: 100%;
+      max-height: calc(100svh - 6rem);
+      padding: 0.55rem;
+      border-radius: 1rem;
+      box-shadow: 6px 6px 0px var(--accent1);
+    }
+
+    .project-image-lightbox-image {
+      max-height: calc(100svh - 7.25rem);
+    }
+
+    .project-image-lightbox-close {
+      top: 1rem;
+      right: 1rem;
     }
   
     .services-header {

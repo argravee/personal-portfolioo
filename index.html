@@ -65,10 +65,10 @@
               <p><a href="#home">Home</a></p>
             </div>
             <div class="nav-item">
-              <p><a href="#skills">Skills</a></p>
+              <p><a href="#experience">Experience</a></p>
             </div>
             <div class="nav-item">
-              <p><a href="#experience">Experience</a></p>
+              <p><a href="#skills">Skills</a></p>
             </div>
             <div class="nav-item">
               <p><a href="#projects">Projects</a></p>
@@ -120,9 +120,47 @@
       <section class="about-hero about-hero-compact">
         <div class="about-hero-bio">
           <p class="ss">
-            I'm a computer science and philosophy student at USask. I'm passionate about building robust machine learning models, backend infrastructures, and full-stack systems that solve real-world problems and make a difference in people's lives. When I'm not coding, you can usually find me on a hike I was wildly overconfident about.
+            I'm a computer science and philosophy student at USask. My recent work consists of building decision-oriented machine learning models, backend infrastructures, and full-stack systems that solve real-world problems and make a difference in people's lives. When I'm not coding, you can usually find me on a hike I was wildly overconfident about.
           </p>
           <p class="mn">ML / Backend / Systems</p>
+        </div>
+      </section>
+
+      <section class="experience-section" id="experience" aria-labelledby="experience-title">
+        <div class="experience-header">
+          <h1 id="experience-title">Experience</h1>
+        </div>
+        <div class="experience-panel">
+        <aside class="experience-tabs" aria-label="Experience company">
+          <button class="mn active" type="button" data-experience-tab="freelance" aria-selected="true">Private Client Work</button>
+          <button class="mn" type="button" data-experience-tab="sunny" aria-selected="false">Sunny and Safe Saskatchewan</button>
+        </aside>
+        <div class="experience-entries">
+          <article class="experience-entry active" data-experience-panel="freelance">
+            <div class="experience-entry-header">
+              <h2>Freelance Software Developer</h2>
+              <p class="mn">May - June 2026</p>
+            </div>
+            <p class="experience-company">Private Client Work</p>
+            <ul class="experience-points">
+              <li>Built an internal sales-engineering tool for a commercial energy client to support pre-sales evaluation of battery-storage opportunities.</li>
+              <li>Designed a guided intake and scoring workflow that translated facility and energy-use inputs into prioritized opportunity assessments.</li>
+              <li>Developed summary reporting features that helped sales and technical teams explain fit, uncertainty, and recommended next steps during early customer evaluation.</li>
+            </ul>
+          </article>
+          <article class="experience-entry" data-experience-panel="sunny" hidden>
+            <div class="experience-entry-header">
+              <h2>Product & Technical Lead</h2>
+              <p class="mn">Aug 2025 - Present</p>
+            </div>
+            <p class="experience-company">Sunny and Safe Saskatchewan</p>
+            <ul class="experience-points">
+              <li>Led a 2-developer team by creating and managing tickets, delegating tasks, and resolving technical blockers during implementation.</li>
+              <li>Led the development of a public outreach website with campaign storytelling, educational resources, and impact metrics.</li>
+              <li>Leading the development of a UV-based sunscreen detection device that visualizes facial sunscreen coverage to improve public health and awareness initiatives.</li>
+            </ul>
+          </article>
+        </div>
         </div>
       </section>
 
@@ -169,44 +207,6 @@
         </div>
       </section>
 
-      <section class="experience-section" id="experience" aria-labelledby="experience-title">
-        <div class="experience-header">
-          <h1 id="experience-title">Experience</h1>
-        </div>
-        <div class="experience-panel">
-        <aside class="experience-tabs" aria-label="Experience company">
-          <button class="mn active" type="button" data-experience-tab="freelance" aria-selected="true">Private Client Work</button>
-          <button class="mn" type="button" data-experience-tab="sunny" aria-selected="false">Sunny and Safe Saskatchewan</button>
-        </aside>
-        <div class="experience-entries">
-          <article class="experience-entry active" data-experience-panel="freelance">
-            <div class="experience-entry-header">
-              <h2>Freelance Software Developer</h2>
-              <p class="mn">May - June 2026</p>
-            </div>
-            <p class="experience-company">Private Client Work</p>
-            <ul class="experience-points">
-              <li>Built an internal sales-engineering tool for a commercial energy client to support pre-sales evaluation of battery-storage opportunities.</li>
-              <li>Designed a guided intake and scoring workflow that translated facility and energy-use inputs into prioritized opportunity assessments.</li>
-              <li>Developed summary reporting features that helped sales and technical teams explain fit, uncertainty, and recommended next steps during early customer evaluation.</li>
-            </ul>
-          </article>
-          <article class="experience-entry" data-experience-panel="sunny" hidden>
-            <div class="experience-entry-header">
-              <h2>Product & Technical Lead</h2>
-              <p class="mn">Aug 2025 - Present</p>
-            </div>
-            <p class="experience-company">Sunny and Safe Saskatchewan</p>
-            <ul class="experience-points">
-              <li>Led a 2-developer team by creating and managing tickets, delegating tasks, and resolving technical blockers during implementation.</li>
-              <li>Led the development of a public outreach website with campaign storytelling, educational resources, and impact metrics.</li>
-              <li>Leading the development of a UV-based sunscreen detection device that visualizes facial sunscreen coverage to improve public health and awareness initiatives.</li>
-            </ul>
-          </article>
-        </div>
-        </div>
-      </section>
-
       <!-- portfolio showcase -->
       <section class="portfolio-showcase" id="projects">
         <div class="portfolio-pin-wrapper">
@@ -224,7 +224,7 @@
 
           <div class="featured-work-indicator"></div>
 
-          <div class="portfolio-image-container">
+          <div class="portfolio-image-container" role="button" tabindex="0" aria-label="Expand project preview image">
             <div class="portfolio-image-inner">
               <img class="portfolio-cycle-image" src="/images/work-items/work-item-1.png" alt="" />
             </div>
@@ -267,36 +267,6 @@
               </details>
             </div>
             <div class="portfolio-card" id="portfolio-card-2">
-              <h2>Sunny & Safe Sask</h2>
-              <p class="mn">A public health website that turns sun-safety education into clear resources, campaign storytelling, and practical sunscreen awareness tools.</p>
-              <div class="project-tech-row">
-                <div class="project-tech-stack" aria-label="Technologies used">
-                  <span>TypeScript</span>
-                  <span>React</span>
-                  <span>Responsive UI</span>
-                  <span>Education</span>
-                </div>
-                <a class="project-link-icon" href="https://sunnyandsafe.ca/" target="_blank" aria-label="Open Sunny and Safe Saskatchewan website">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M14 4h6v6h-2V7.41l-8.29 8.3-1.42-1.42 8.3-8.29H14V4ZM5 6h6v2H7v9h9v-4h2v6H5V6Z" />
-                  </svg>
-                </a>
-              </div>
-              <details class="project-more">
-                <summary>
-                  <span>More details</span>
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 15.5 5.75 9.25l1.4-1.4L12 12.68l4.85-4.83 1.4 1.4L12 15.5Z" />
-                  </svg>
-                </summary>
-                <ul>
-                  <li>Built a public-facing outreach site for Sunny and Safe Saskatchewan to make sun-safety information easier to find, understand, and act on.</li>
-                  <li>Structured the site around campaign storytelling, educational resources, practical prevention guidance, and accessible contact pathways.</li>
-                  <li>Added interactive, user-facing tools and content areas that help visitors connect sunscreen habits with real-world UV protection and public health awareness.</li>
-                </ul>
-              </details>
-            </div>
-            <div class="portfolio-card" id="portfolio-card-3">
               <h2>Civic Voice</h2>
               <p class="mn">A full-stack mobile civic application that ingests, normalizes, and serves legislative and representative data across Canadian jurisdictions.</p>
               <div class="project-tech-row">
@@ -327,10 +297,50 @@
                 </ul>
               </details>
             </div>
+            <div class="portfolio-card" id="portfolio-card-3">
+              <h2>Sunny & Safe Sask</h2>
+              <p class="mn">A public health website that turns sun-safety education into clear resources, campaign storytelling, and practical sunscreen awareness tools.</p>
+              <div class="project-tech-row">
+                <div class="project-tech-stack" aria-label="Technologies used">
+                  <span>TypeScript</span>
+                  <span>React</span>
+                  <span>Responsive UI</span>
+                  <span>Education</span>
+                </div>
+                <a class="project-link-icon" href="https://sunnyandsafe.ca/" target="_blank" aria-label="Open Sunny and Safe Saskatchewan website">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 4h6v6h-2V7.41l-8.29 8.3-1.42-1.42 8.3-8.29H14V4ZM5 6h6v2H7v9h9v-4h2v6H5V6Z" />
+                  </svg>
+                </a>
+              </div>
+              <details class="project-more">
+                <summary>
+                  <span>More details</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 15.5 5.75 9.25l1.4-1.4L12 12.68l4.85-4.83 1.4 1.4L12 15.5Z" />
+                  </svg>
+                </summary>
+                <ul>
+                  <li>Built a public-facing outreach site for Sunny and Safe Saskatchewan to make sun-safety information easier to find, understand, and act on.</li>
+                  <li>Structured the site around campaign storytelling, educational resources, practical prevention guidance, and accessible contact pathways.</li>
+                  <li>Added interactive, user-facing tools and content areas that help visitors connect sunscreen habits with real-world UV protection and public health awareness.</li>
+                </ul>
+              </details>
+            </div>
           </div>
 
         </div>
       </section>
+
+      <div class="project-image-lightbox" role="dialog" aria-modal="true" aria-label="Expanded project preview" hidden>
+        <button class="project-image-lightbox-close" type="button" aria-label="Close expanded image">
+          <span></span>
+          <span></span>
+        </button>
+        <div class="project-image-lightbox-frame">
+          <img class="project-image-lightbox-image" src="" alt="Expanded project preview" />
+        </div>
+      </div>
 
       
 
