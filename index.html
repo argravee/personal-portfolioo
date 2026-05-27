@@ -1,15 +1,451 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="/assets/favicon.ico" />
-    <!--<a href="https://www.flaticon.com/free-icons/rocky-mountains" title="rocky mountains icons">Rocky mountains icons created by Pop Vectors - Flaticon</a>-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nasar | SWE</title>
+    <title>Nasar Siddiqui | Portfolio</title>
+    <meta name="description" content="Portfolio of Nasar Siddiqui, a computer science and philosophy student building machine learning, backend, and full-stack systems." />
+    <meta property="og:title" content="Nasar Siddiqui | Portfolio" />
+    <meta property="og:description" content="Machine learning, backend infrastructure, and full-stack systems built with care." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/site-preview.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Nasar Siddiqui | Portfolio" />
+    <meta name="twitter:description" content="Machine learning, backend infrastructure, and full-stack systems built with care." />
+    <meta name="twitter:image" content="/site-preview.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/css/transition.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/globals.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/work.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- page transition  -->
+    <div class="transition">
+      <div class="loader-intro" aria-label="Loading portfolio">
+        <div class="loader-mark">
+          <p class="mn">Portfolio</p>
+          <h1>Nasar Siddiqui</h1>
+          <div class="loader-line" aria-hidden="true">
+            <span></span>
+          </div>
+          <p class="mn">SWE & Philosophy // USASK</p>
+        </div>
+      </div>
+      <div class="transition-overlay overlay-1"></div>
+      <div class="transition-overlay overlay-2"></div>
+      <div class="transition-overlay overlay-3"></div>
+      <div class="transition-overlay overlay-4"></div>
+      <div class="transition-overlay overlay-5"></div>
+    </div>
+
+    <div class="page home-page">
+        <!-- nav -->
+        <nav>
+          <button class="menu-toggle-btn" type="button" aria-label="Open navigation" aria-expanded="false">
+            <div class="menu-toggle-btn-wrapper">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </nav>
+  
+        <div class="nav-overlay">
+          <div class="nav-items">
+            <div class="nav-item active">
+              <p><a href="#home">Home</a></p>
+            </div>
+            <div class="nav-item">
+              <p><a href="#experience">Experience</a></p>
+            </div>
+            <div class="nav-item">
+              <p><a href="#skills">Skills</a></p>
+            </div>
+            <div class="nav-item">
+              <p><a href="#projects">Projects</a></p>
+            </div>
+            <div class="nav-item">
+              <p><a href="#contact">Contact</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="social-dock" aria-label="Social links">
+          <a href="https://github.com/argravee" target="_blank" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2.25A9.75 9.75 0 0 0 8.92 21.26c.49.09.67-.21.67-.47v-1.7c-2.72.59-3.3-1.16-3.3-1.16-.45-1.13-1.1-1.43-1.1-1.43-.89-.61.07-.6.07-.6.99.07 1.51 1.02 1.51 1.02.88 1.5 2.31 1.07 2.87.82.09-.64.34-1.07.62-1.32-2.17-.25-4.46-1.09-4.46-4.84 0-1.07.38-1.94 1.01-2.62-.1-.25-.44-1.24.1-2.59 0 0 .83-.26 2.69 1.01A9.28 9.28 0 0 1 12 7.05c.83 0 1.66.11 2.44.33 1.86-1.27 2.68-1.01 2.68-1.01.54 1.35.2 2.34.1 2.59.63.68 1.01 1.55 1.01 2.62 0 3.76-2.29 4.59-4.47 4.83.35.3.66.9.66 1.82v2.56c0 .26.18.57.68.47A9.75 9.75 0 0 0 12 2.25Z" />
+            </svg>
+          </a>
+          <a href="mailto:nasar.siddi@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.75 6.5h14.5A1.75 1.75 0 0 1 21 8.25v7.5a1.75 1.75 0 0 1-1.75 1.75H4.75A1.75 1.75 0 0 1 3 15.75v-7.5A1.75 1.75 0 0 1 4.75 6.5Zm.66 1.75 6.59 4.31 6.59-4.31H5.41Zm13.84 7.5V9.86l-6.78 4.43a.88.88 0 0 1-.94 0L4.75 9.86v5.89h14.5Z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/nasarsidd" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5.38 8.9h3.24V19H5.38V8.9Zm1.62-4.9a1.88 1.88 0 1 1 0 3.76 1.88 1.88 0 0 1 0-3.76Zm3.59 4.9h3.1v1.38h.04c.43-.82 1.49-1.68 3.07-1.68 3.28 0 3.89 2.16 3.89 4.97V19h-3.23v-4.81c0-1.15-.02-2.62-1.6-2.62-1.6 0-1.84 1.25-1.84 2.54V19h-3.23V8.9Z" />
+            </svg>
+          </a>
+        </div>
+             
+        <!-- home - hero -->
+      <section class="hero" id="home">
+        <div class="availability-stamp" aria-label="Available for freelance work in May 2026">
+          <p class="mn">Available for freelance work</p>
+          <h2>MAY '26</h2>
+        </div>
+        <div class="hero-header-wrapper">
+          <div class="hero-header hero-header-1">
+            <h1>Nasar</h1>
+          </div>
+          <div class="hero-header hero-header-2">
+            <h1>Siddiqui</h1>
+          </div>
+        </div>
+        <div class="hero-footer">
+          <div class="hero-footer-tags">
+            <p class="mn">SWE & Philosophy // USASK</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-hero about-hero-compact">
+        <div class="about-hero-bio">
+          <p class="ss">
+            I'm a computer science and philosophy student at USask. My recent work consists of building decision-oriented machine learning models, backend infrastructures, and full-stack systems that solve real-world problems and make a difference in people's lives. When I'm not coding, you can usually find me on a hike I was wildly overconfident about.
+          </p>
+          <p class="mn">ML / Backend / Systems</p>
+        </div>
+      </section>
+
+      <section class="experience-section" id="experience" aria-labelledby="experience-title">
+        <div class="experience-header">
+          <h1 id="experience-title">Experience</h1>
+        </div>
+        <div class="experience-panel">
+        <aside class="experience-tabs" aria-label="Experience company">
+          <button class="mn active" type="button" data-experience-tab="freelance" aria-selected="true">Private Client Work</button>
+          <button class="mn" type="button" data-experience-tab="sunny" aria-selected="false">Sunny and Safe Saskatchewan</button>
+        </aside>
+        <div class="experience-entries">
+          <article class="experience-entry active" data-experience-panel="freelance">
+            <div class="experience-entry-header">
+              <h2>Freelance Software Developer</h2>
+              <p class="mn">May - June 2026</p>
+            </div>
+            <p class="experience-company">Private Client Work</p>
+            <ul class="experience-points">
+              <li>Built an internal sales-engineering tool for a commercial energy client to support pre-sales evaluation of battery-storage opportunities.</li>
+              <li>Designed a guided intake and scoring workflow that translated facility and energy-use inputs into prioritized opportunity assessments.</li>
+              <li>Developed summary reporting features that helped sales and technical teams explain fit, uncertainty, and recommended next steps during early customer evaluation.</li>
+            </ul>
+          </article>
+          <article class="experience-entry" data-experience-panel="sunny" hidden>
+            <div class="experience-entry-header">
+              <h2>Product & Technical Lead</h2>
+              <p class="mn">Aug 2025 - Present</p>
+            </div>
+            <p class="experience-company">Sunny and Safe Saskatchewan</p>
+            <ul class="experience-points">
+              <li>Led a 2-developer team by creating and managing tickets, delegating tasks, and resolving technical blockers during implementation.</li>
+              <li>Led the development of a public outreach website with campaign storytelling, educational resources, and impact metrics.</li>
+              <li>Leading the development of a UV-based sunscreen detection device that visualizes facial sunscreen coverage to improve public health and awareness initiatives.</li>
+            </ul>
+          </article>
+        </div>
+        </div>
+      </section>
+
+      <section class="services about-services" id="skills" aria-label="Skills">
+        <div class="service-card" id="service-card-1">
+          <div class="service-card-inner">
+            <div class="service-card-content">
+              <h1>Machine Learning</h1>
+              <p class="ss service-card-tags">PyTorch, scikit-learn, NumPy, Continual Learning, Model Training & Evaluation</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-card" id="service-card-2">
+          <div class="service-card-inner">
+            <div class="service-card-content">
+              <h1>Languages</h1>
+              <p class="ss service-card-tags">Python, SQL, Java, JavaScript, TypeScript</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-card" id="service-card-3">
+          <div class="service-card-inner">
+            <div class="service-card-content">
+              <h1>Backend & Systems</h1>
+              <p class="ss service-card-tags">FastAPI, Flask, REST APIs, MySQL, Supabase Edge Functions, OAuth</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-card" id="service-card-4">
+          <div class="service-card-inner">
+            <div class="service-card-content">
+              <h1>Data & Developer Tools</h1>
+              <p class="ss service-card-tags">OpenAPI, JSON Schema, PostgreSQL, Supabase, Cron, Docker, GitHub Actions, MySQL</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-card" id="service-card-5">
+          <div class="service-card-inner">
+            <div class="service-card-content">
+              <h1>Philosophy & Writing</h1>
+              <p class="ss service-card-tags">Ethics, Epistemology, Political Philosophy, Philosophy of Science, Technical Writing, Argumentation</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- portfolio showcase -->
+      <section class="portfolio-showcase" id="projects">
+        <div class="portfolio-pin-wrapper">
+          
+          <div class="portfolio-hero-title">
+            <div class="hero-header-wrapper">
+              <div class="hero-header hero-header-1">
+                <h1>Featured</h1>
+              </div>
+              <div class="hero-header hero-header-2">
+                <h1>Projects</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured-work-indicator"></div>
+
+          <div class="portfolio-image-container" role="button" tabindex="0" aria-label="Expand project preview image">
+            <div class="portfolio-image-inner">
+              <img class="portfolio-cycle-image" src="/images/work-items/work-item-1.png" alt="" />
+            </div>
+          </div>
+
+          <div class="portfolio-details-container">
+            <div class="portfolio-card" id="portfolio-card-1">
+              <h2>Encrypted Inference Gateway</h2>
+              <p class="mn">A privacy-preserving ML inference gateway with formal API contracts, encrypted request handling, and reproducible benchmark tooling.</p>
+              <div class="project-tech-row">
+                <div class="project-tech-stack" aria-label="Technologies used">
+                  <span>Python</span>
+                  <span>FastAPI</span>
+                  <span>Pyfhel</span>
+                  <span>OpenAPI</span>
+                  <span>JSON</span>
+                  <span>GitHub Actions</span>
+                  <span>Jupyter Notebook</span>
+                </div>
+                <a class="project-link-icon" href="https://github.com/argravee/privacy-preserving-inference-gateway" target="_blank" aria-label="Open Encrypted Inference Gateway on GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 4h6v6h-2V7.41l-8.29 8.3-1.42-1.42 8.3-8.29H14V4ZM5 6h6v2H7v9h9v-4h2v6H5V6Z" />
+                  </svg>
+                </a>
+              </div>
+              <details class="project-more">
+                <summary>
+                  <span>More details</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 15.5 5.75 9.25l1.4-1.4L12 12.68l4.85-4.83 1.4 1.4L12 15.5Z" />
+                  </svg>
+                </summary>
+                <ul>
+                  <li>Designed and implemented a <strong>privacy-preserving inference gateway</strong> for ML inference with formal <strong>JSON Schema</strong> and <strong>OpenAPI 3.1</strong> contracts to ensure wire-level correctness, interoperability, and safe client-server workflows.</li>
+                  <li>Built layered validation pipelines for <strong>CKKS-based encrypted inference</strong>, separating schema, envelope, and ciphertext checks to enforce safe deserialization and parameter compatibility before execution.</li>
+                  <li>Developed a <strong>Pyfhel-based reference backend</strong> and Python client SDK for model discovery, local session creation, client-side encryption/serialization, inference submission, encrypted result retrieval, and local decryption.</li>
+                  <li>Verified protocol behavior with end-to-end integration, ciphertext round-trip, and plaintext/encrypted agreement tests, then built reproducible benchmark tooling and <strong>GitHub Actions CI</strong> to quantify latency, throughput, payload growth, and output agreement while improving regression detection and release reliability.</li>
+                  <li>Optimized the encrypted inference path by caching reusable <strong>CKKS contexts</strong> across requests, cutting mean encrypted infer time from <strong>~311.9 ms</strong> to <strong>~85.0 ms</strong> and improving end-to-end throughput by <strong>~2.5x</strong>.</li>
+                </ul>
+              </details>
+            </div>
+            <div class="portfolio-card" id="portfolio-card-2">
+              <h2>Civic Voice</h2>
+              <p class="mn">A full-stack mobile civic application that ingests, normalizes, and serves legislative and representative data across Canadian jurisdictions.</p>
+              <div class="project-tech-row">
+                <div class="project-tech-stack" aria-label="Technologies used">
+                  <span>Expo</span>
+                  <span>React</span>
+                  <span>TypeScript</span>
+                  <span>Supabase</span>
+                  <span>PostgreSQL</span>
+                  <span>Edge Functions</span>
+                  <span>Cron</span>
+                  <span>OAuth</span>
+                </div>
+              </div>
+              <details class="project-more">
+                <summary>
+                  <span>More details</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 15.5 5.75 9.25l1.4-1.4L12 12.68l4.85-4.83 1.4 1.4L12 15.5Z" />
+                  </svg>
+                </summary>
+                <ul>
+                  <li>Architected and built a <strong>full-stack mobile application</strong> that ingests, normalizes, and serves official legislative, policy, and representative data across multiple Canadian jurisdictions.</li>
+                  <li>Designed a <strong>PostgreSQL/Supabase</strong> data layer with scheduled refresh jobs, serverless ingestion functions, public read views, and caching strategies for low-latency access to frequently updated public datasets.</li>
+                  <li>Built <strong>server-driven push notification</strong> workflows for user-relevant civic changes, including device token registration, subscription synchronization, queued dispatch, and delivery test infrastructure.</li>
+                  <li>Implemented <strong>email/password authentication</strong>, password reset, and backend-synced user state for preferences, saved content, and tracked civic activity.</li>
+                  <li>Developed <strong>internal observability surfaces</strong> for refresh-status monitoring, data freshness validation, and backend debugging, improving confidence in scheduled ingestion and notification pipelines.</li>
+                </ul>
+              </details>
+            </div>
+            <div class="portfolio-card" id="portfolio-card-3">
+              <h2>Sunny & Safe Sask</h2>
+              <p class="mn">A public health website that turns sun-safety education into clear resources, campaign storytelling, and practical sunscreen awareness tools.</p>
+              <div class="project-tech-row">
+                <div class="project-tech-stack" aria-label="Technologies used">
+                  <span>TypeScript</span>
+                  <span>React</span>
+                  <span>Responsive UI</span>
+                  <span>Education</span>
+                </div>
+                <a class="project-link-icon" href="https://sunnyandsafe.ca/" target="_blank" aria-label="Open Sunny and Safe Saskatchewan website">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 4h6v6h-2V7.41l-8.29 8.3-1.42-1.42 8.3-8.29H14V4ZM5 6h6v2H7v9h9v-4h2v6H5V6Z" />
+                  </svg>
+                </a>
+              </div>
+              <details class="project-more">
+                <summary>
+                  <span>More details</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 15.5 5.75 9.25l1.4-1.4L12 12.68l4.85-4.83 1.4 1.4L12 15.5Z" />
+                  </svg>
+                </summary>
+                <ul>
+                  <li>Built a public-facing outreach site for Sunny and Safe Saskatchewan to make sun-safety information easier to find, understand, and act on.</li>
+                  <li>Structured the site around campaign storytelling, educational resources, practical prevention guidance, and accessible contact pathways.</li>
+                  <li>Added interactive, user-facing tools and content areas that help visitors connect sunscreen habits with real-world UV protection and public health awareness.</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="project-image-lightbox" role="dialog" aria-modal="true" aria-label="Expanded project preview" hidden>
+        <button class="project-image-lightbox-close" type="button" aria-label="Close expanded image">
+          <span></span>
+          <span></span>
+        </button>
+        <div class="project-image-lightbox-frame">
+          <img class="project-image-lightbox-image" src="" alt="Expanded project preview" />
+        </div>
+      </div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+        <!-- home - contact cta -->
+      <section class="contact-cta" id="contact">
+        <div class="contact-card">
+          <p class="mn contact-card-eyebrow">Let's work together</p>
+          <h1>Contact</h1>
+          <div class="contact-card-links">
+            <a href="mailto:nasar.siddi@gmail.com">
+              <span>Email</span>
+              <strong>nasar.siddi@gmail.com</strong>
+            </a>
+            <a href="https://www.linkedin.com/in/nasarsidd" target="_blank">
+              <span>LinkedIn</span>
+              <strong>nasarsidd</strong>
+            </a>
+          </div>
+        </div>
+      </section>
+
+<!-- home - footer -->
+<footer>
+    <div class="footer-container">
+      <div class="footer-symbols footer-symbols-1">
+        <img src="/images/global/s6.png" alt="" />
+        <img src="/images/global/s6.png" alt="" />
+      </div>
+      <div class="footer-symbols footer-symbols-2">
+        <img src="/images/global/s6.png" alt="" />
+        <img src="/images/global/s6.png" alt="" />
+      </div>
+      <div class="footer-header">
+        <h1>Nasar Siddiqui</h1>
+      </div>
+      <div class="footer-row">
+        <div class="footer-col">
+          <p>Explore</p>
+          <p><a href="/">Home</a></p>
+          <p><a href="/contact">Contact</a></p>
+        </div>
+        <div class="footer-col">
+          <p>About Me</p>
+          <p><span style="opacity: 0.7">USask Student</span></p>
+          <p><span style="opacity: 0.7">Saskatoon, SK</span></p>
+        </div>
+        <div class="footer-col">
+          <p>Connect</p>
+          <p>
+            <a href="https://www.linkedin.com/in/nasarsidd" target="_blank">LinkedIn</a>
+          </p>
+          <p>
+            <a href="https://github.com/argravee" target="_blank"
+              >Github</a
+            >
+          </p>
+        </div>
+        <div class="footer-col">
+          <p>Extras</p>
+          <p>
+            <a href="https://sunnyandsafe.ca/" target="_blank"
+              >Sunny and Safe Saskatchewan</a>
+          </p>
+          <p>
+            <a href="https://github.com/argravee/privacy-preserving-inference-gateway" target="_blank"
+              >Encrypted Inference Gateway</a>
+          </p>
+        </div>
+        
+      </div>
+      <div class="copyright-info">
+        <p class="mn">© - Nasar Siddiqui // 2026</p>
+        <p class="mn"></p>
+      </div>
+      <div class="explosion-container"></div>
+    </div>
+  </footer>
+
+
+
+    </div>
+    <script type="module" src="/js/transition.js"></script>
+    <script type="module" src="/js/lenis-scroll.js"></script>
+    <script type="module" src="/js/menu.js"></script>
+    <script type="module" src="/js/hero.js"></script>
+    <script type="module" src="/js/featured-work.js"></script>
+    <script type="module" src="/js/services.js"></script>
+    <script type="module" src="/js/experience.js"></script>
+    <script type="module" src="/js/about.js"></script>
+    
+    
   </body>
 </html>
-

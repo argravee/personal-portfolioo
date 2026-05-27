@@ -1,0 +1,118 @@
+// services.js
+
+// Import GSAP and ScrollTrigger plugin
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Wait for DOM to fully load before executing
+document.addEventListener("DOMContentLoaded", () => {
+  // Check if current page is the homepage; exit if not
+  const isHomePage = document.querySelector(".page.home-page");
+  if (!isHomePage) return;
+
+  // Register ScrollTrigger plugin with GSAP
+  gsap.registerPlugin(ScrollTrigger);
+
+  let scrollTriggerInstances = []; // Store ScrollTrigger instances for cleanup
+
+  // Initialize animations
+  const initAnimations = () => {
+    // Clean up existing ScrollTrigger instances
+    scrollTriggerInstances.forEach((instance) => {
+      if (instance) instance.kill(true);
+    });
+    scrollTriggerInstances = [];
+
+    // Get all service card elements
+    const services = gsap.utils.toArray(".service-card");
+    if (services.length === 0) return;
+
+    if (window.innerWidth <= 1000) {
+      gsap.set(".service-card", { clearProps: "all" });
+      gsap.set(".service-card-inner", { clearProps: "all" });
+      services.forEach((service, index) => {
+        const serviceCardInner = service.querySelector(".service-card-inner");
+        const direction = index % 2 === 0 ? -1 : 1;
+        gsap.set(serviceCardInner, {
+          opacity: index === 0 ? 1 : 0.82,
+          y: index === 0 ? 0 : 46,
+          scale: index === 0 ? 1 : 0.96,
+          rotate: direction * 1.4,
+          transformOrigin: "50% 100%",
+        });
+
+        const reveal = gsap.to(serviceCardInner, {
+          opacity: 1,
+          y: index === services.length - 1 ? 0 : -10,
+          scale: 1,
+          rotate: 0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: service,
+            start: "top 88%",
+            end: "top 42%",
+            scrub: 0.45,
+          },
+        });
+        scrollTriggerInstances.push(reveal.scrollTrigger);
+      });
+      ScrollTrigger.refresh();
+      return;
+    }
+
+    gsap.set(".service-card", { clearProps: "all" });
+    gsap.set(".service-card-inner", { clearProps: "opacity,scale,rotate,transformOrigin" });
+
+    const lastService = services[services.length - 1];
+
+    // Create main ScrollTrigger to track entire service section
+    const mainTrigger = ScrollTrigger.create({
+      trigger: services[0], // First service card as trigger
+      start: "top 50%", // Start when top of first card hits 50% of viewport
+      endTrigger: lastService, // Last service card
+      end: "top 45%", // End when the final card reaches the pinned stack
+    });
+    scrollTriggerInstances.push(mainTrigger); // Store instance
+
+    // Animate each service card
+    services.forEach((service, index) => {
+      const isLastServiceCard = index === services.length - 1; // Check if last card
+      const serviceCardInner = service.querySelector(".service-card-inner"); // Inner element for animation
+
+      if (!isLastServiceCard) {
+        // Pin service card during scroll
+        const pinTrigger = ScrollTrigger.create({
+          trigger: service, // Current service card
+          start: "top 45%", // Pin when top hits 45% of viewport
+          endTrigger: lastService, // End within the services stack
+          end: "top 45%", // Stop before the next section pulls cards away
+          pin: true, // Pin the card in place
+          pinSpacing: false, // No extra spacing for pinned elements
+        });
+        scrollTriggerInstances.push(pinTrigger); // Store instance
+
+        // Animate inner card content with vertical movement
+        const scrollAnimation = gsap.to(serviceCardInner, {
+          y: `-${(services.length - index) * 14}vh`, // Move up based on card position
+          ease: "none", // Linear animation for smooth scroll
+          scrollTrigger: {
+            trigger: service, // Current service card
+            start: "top 45%", // Start animation at 45% of viewport
+            endTrigger: lastService, // End within the services stack
+            end: "top 45%", // Stop with the cards still visibly stacked
+            scrub: true, // Tie animation to scroll position
+          },
+        });
+        scrollTriggerInstances.push(scrollAnimation.scrollTrigger); // Store ScrollTrigger instance
+      }
+    });
+  };
+
+  // Run animations on page load
+  initAnimations();
+
+  // Re-run animations on window resize to recalculate trigger points
+  window.addEventListener("resize", () => {
+    initAnimations();
+  });
+});

@@ -14,10 +14,10 @@ import {
   X,
 } from 'lucide-react';
 import { motion, useScroll, useSpring, useTransform, AnimatePresence } from 'motion/react';
-import civicVoiceImage from '../assets/cv-image.png';
-import encryptedInferenceImage from '../assets/encryp.png';
-import mountainImage from '../assets/mountain.jpg';
-import sunnyAndSafeSaskatchewanImage from '../assets/sunny-and-safe-saskatchewan.png';
+import civicVoiceImage from './assets/images/civic_voice_1779507362029.png';
+import encryptedInferenceImage from './assets/images/inference_gateway_1779507394364.png';
+import saskatchewanSunImage from './assets/images/saskatchewan_sun_1779507376411.png';
+import sunnyAndSafeSaskatchewanImage from './assets/images/sunny-and-safe-saskatchewan.png';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -296,7 +296,7 @@ export default function App() {
                 <img
                   alt="Atmospheric seaside landscape"
                   className="absolute inset-0 w-full h-full object-cover sketch-mask border-8 border-shell-white shadow-2xl transition-all duration-700 group-hover:scale-105 group-hover:rotate-2"
-                  src={mountainImage}
+                  src={saskatchewanSunImage}
                 />
               </div>
             </motion.div>

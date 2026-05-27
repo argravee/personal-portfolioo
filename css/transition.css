@@ -1,0 +1,92 @@
+/* transition for preloader */
+
+
+.transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100000;
+    pointer-events: none;
+  }
+
+  .loader-intro {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    background-color: var(--bg);
+    color: var(--fg);
+    will-change: transform, opacity;
+  }
+
+  .loader-mark {
+    width: min(780px, 82vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9em;
+    text-align: center;
+  }
+
+  .loader-mark h1 {
+    font-size: clamp(4.5rem, 13vw, 11rem);
+    line-height: 0.82;
+    letter-spacing: -0.055em;
+  }
+
+  .loader-mark .mn {
+    color: rgba(26, 43, 32, 0.66);
+  }
+
+  .loader-line {
+    width: min(360px, 58vw);
+    height: 2px;
+    margin: 0.35em 0;
+    overflow: hidden;
+    background-color: rgba(26, 43, 32, 0.16);
+  }
+
+  .loader-line span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent1);
+    transform: scaleX(0);
+    transform-origin: left;
+    will-change: transform;
+  }
+  
+  .transition-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(1);
+    transform-origin: top;
+    will-change: transform;
+  }
+  
+  .transition-overlay.overlay-1 {
+    background-color: var(--fg);
+  }
+  
+  .transition-overlay.overlay-2 {
+    background-color: var(--accent1);
+  }
+  
+  .transition-overlay.overlay-3 {
+    background-color: var(--accent2);
+  }
+  
+  .transition-overlay.overlay-4 {
+    background-color: var(--accent3);
+  }
+  
+  .transition-overlay.overlay-5 {
+    background-color: var(--accent4);
+  }
+  
