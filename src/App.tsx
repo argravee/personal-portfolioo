@@ -457,7 +457,7 @@ export default function App() {
                 category: '04. Full-Stack Mobile Application',
                 image: civicVoiceImage,
                 description: 'Civic Voice is a mobile-first platform that transforms fragmented Canadian political data into a unified, personalized civic dashboard. It allows users to identify their federal and provincial representatives, track relevant bills and policy activity, and stay informed about decisions that directly impact them without needing to navigate complex government websites.\n\nRather than changing user behavior, Civic Voice builds on an existing pattern: when people see political issues online, they often seek out representatives or institutions to respond. This platform formalizes and improves that flow by providing a direct, structured pathway from awareness to informed civic action.',
-                github: true
+                liveUrl: 'https://argravee.github.io/civic-voice-site/'
               })}
             >
               <div className="aspect-[16/9] overflow-hidden organic-border bg-white shadow-xl rotate-[-2deg]">
@@ -472,8 +472,17 @@ export default function App() {
                   04. Full-Stack Mobile Application
                 </span>
                 <h3 className="font-heading text-2xl mt-1 text-on-surface flex md:justify-end items-center gap-2">
-                  <ArrowUpRight className="w-5 h-5 text-terracotta" />
                   Civic Voice
+                  <a
+                    href="https://argravee.github.io/civic-voice-site/"
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center text-terracotta hover:text-coastal-blue transition-colors"
+                    title="Visit website"
+                  >
+                    <ArrowUpRight className="w-5 h-5" />
+                  </a>
                 </h3>
               </div>
             </motion.div>
